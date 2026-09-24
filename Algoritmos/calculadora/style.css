@@ -1,0 +1,198 @@
+:root {
+    --cor01-: #005223;
+    --cor02-: #d11313;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pai {
+    background-color: whitesmoke;
+    border: solid 1px var(--cor01-);
+    padding: 50px 0px 50px 50px;
+    display: flex;
+    border-radius: 16px;
+    align-items: center;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(27, 27, 27);
+}
+
+.input-and-label {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   gap: 8px;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-right: 50px;
+    width: 600px;
+}
+
+label {
+    font-weight: 500;
+}
+
+.exibir {
+    background-color: #005223;
+    height: 100%;
+    padding: 50px;
+    width: 400px;
+    border-radius: 0px 10px 10px 0px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    height: 25px;
+    border: none;
+    padding: 15px 25px;
+    border: solid 1px var(--cor01-);
+    border-radius: 5px;
+}
+
+button {
+    border: none;
+    background-color: var(--cor01-);
+    padding: 15px 40px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 150px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #009d44;
+    transition: all 0.3s;
+}
+
+.empty-state-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 38px;
+}
+
+.resultado-calc-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #3B7A56;
+    border-radius: 10px;
+    height: 100%;
+    padding: 30px;
+}
+
+.empty-state-result {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 16px;
+    display: flex;
+    align-self: center;
+}
+
+.empty-state-result2 {
+    font-weight: bold;
+    color: #AFC8BA;
+    text-align: center;
+}
+
+.pai .formulario .title-calculadora img {
+    height: 35px;
+    width: 35px;
+    background-color: #005223;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.calculator-icon {
+    display: flex;
+    background-color: #005223;
+    padding: 20px;
+    color: white;
+}
+
+.title-calculadora {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.title-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #005223;
+}
+
+.prod-atual {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    padding: 0px 0px 10px 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.243);
+}
+
+.faturamento-estimado {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 32px;
+    color: #00ff2a;
+    padding: 0px 0px 10px 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.243);
+}
+.descricao{
+    padding: 5px 10px;
+    background-color: var(--cor01-);
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.info-title{
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    display: inline-block;
+}
+
+.title-main{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.plant-icon{
+    width: 30%;
+}
+
+.div-plant-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}

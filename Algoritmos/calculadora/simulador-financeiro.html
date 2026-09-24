@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>Tomatix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="pai">
+        <div class="formulario">
+            <div class="title-calculadora">
+                <div class="title-main">
+                    <img src="./assets/calculator (6).svg" />
+                    <span class="title-name">Calculadora Financeira</span>
+                </div>
+               <div class="info">
+                    <h4 class="info-title descricao">Descubra o potencial da sua estufa</h4>
+                    <p>
+                    Informe a área, a produção do último ciclo e o preço médio de venda. A calculadora identifica sua produtividade
+                    atual, compara o resultado com uma referência de 16,6 kg/m² (meta de referência de alta produtividade) e estima o potencial de produção e faturamento adicional da 
+                    sua estufa.</p>
+                </div>
+            </div>
+            <div class="input-and-label">
+                <label for="ipt_area">Qual é a área aproximada da sua estufa:</label>
+                <span class="descricao">Informe a área utilizada para o cultivo do tomate-cereja, em metros quadrados (m²).</span>
+                <input type="text" id="ipt_area" placeholder="Insira o tamanho em m²">
+            </div>
+            <div class="input-and-label">
+                <label for="ipt_kg">Quantos kilos de tomate você produziu no último ciclo?</label>
+                <span class="descricao">Informe a quantidade total de tomate-cereja produzida no último ciclo, em quilogramas (kg).</span>
+                <input type="text" id="ipt_kg" placeholder="Insira o total em quilos">
+            </div>
+            <div class="input-and-label">
+                <label for="ipt_preco">Qual o preço médio de venda por kg?</label>
+                <span class="descricao">Informe o valor médio recebido por cada quilograma de tomate vendido.</span>
+                <input type="text" id="ipt_preco" placeholder="Insira o valor do Kg">
+            </div>
+            <div class="calcular">
+                <button onclick="calcular()">Calcular</button>
+            </div>
+        </div>
+        <div class="exibir">
+            <span class="empty-state-title">Resultado:</span>
+            <div class="resultado-calc-card" id="div_exibir">
+                <div class="div-plant-icon">
+                    <img src="./assets/ICONE-PLANTA.png" class="plant-icon">
+                    <span class="empty-state-result">Resultado da calculadora aqui</span>
+                </div>
+             <span class="empty-state-result2">Preencha os dados para visualizar o impacto estimado na sua
+                    produção</span>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let producaoReferencia = 10.0;
+
+    function calcular() {
+
+        let area = Number(ipt_area.value);
+        let kg = Number(ipt_kg.value);
+        let preco = Number(ipt_preco.value);
+
+        let producaoAtual = (kg / area).toFixed(2);
+        let producaoPotencial = area * producaoReferencia;
+        let potencialKg = producaoPotencial - kg;
+        let potencialPerc = ((potencialKg / kg) * 100).toFixed(2);
+        let faturamentoPotencial = (potencialKg * preco).toFixed(2);
+
+        if (preco < 0 || kg < 0 || area < 0) {
+            alert("Insira um valor maior que zero.");
+        } else if (preco == "" || kg == "" || area == "") {
+            alert("Por favor, preencha todos os campos antes de continuar.");
+        } else if (producaoAtual < producaoReferencia) {
+            div_exibir.innerHTML = `Produção atual: <span class="prod-atual">${producaoAtual} kg/m²</span><br>
+                                Produção potencial: <span class="prod-atual">${producaoReferencia} kg/m²</span></b><br>
+                                Potencial de aumento: <br>
+                                <span class="prod-atual">+${potencialPerc}%<br>
+                                +${potencialKg.toFixed(2)} kg </span><br>
+                                Faturamento adicional estimado: <br>
+                                <span class="faturamento-estimado">+R$ ${faturamentoPotencial}</span>`;
+        } else {
+            div_exibir.innerHTML = `Parabéns a sua produção está ótima! <br>
+            Adquira nossa solução para garantir que continue assim!`;
+        }
+        
+        
+    }
+
+
+</script>
