@@ -113,9 +113,10 @@ void loop() {
   	// }
 	
 	// Exibi o gráfico de ocilação diária do DLI
-  	Serial.print(dliDia);
-		Serial.print ("\n");
+  	Serial.print(1);               // Valor digital fixo (valor padrão da API)
+	Serial.print(";");             // Separador 
+	Serial.println(dliDia);        // Valor analógico (DLI) seguido de quebra de linha (\n)
   	//Serial.println(22);
 
-	delay(200);
+	delay(2000);
 }
