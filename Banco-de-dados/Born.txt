@@ -1,63 +1,63 @@
-CREATE DATABASE tomatix;
+CREATE TABLE Tomatix;
 
-USE tomatix;
+USE TomatiX;
 
 CREATE TABLE empresa (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	razaoSocial VARCHAR(50) NOT NULL,
-	CNPJ CHAR(14) NOT NULL UNIQUE, 
-	dtCadastro DATETIME NOT NULL
+	razaoSocial VARCHAR(50),
+	CNPJ CHAR(14) UNIQUE, 
+	dtCadastro DATETIME
 );
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50) NOT NULL,
-	login VARCHAR(50) NOT NULL UNIQUE,
-	email VARCHAR(50) NOT NULL UNIQUE,
-	senha VARCHAR(50) NOT NULL,
+	nome VARCHAR(50),
+	login VARCHAR(50) UNIQUE,
+	email VARCHAR(50) UNIQUE,
+	senha VARCHAR(50),
 	dtCadastro DATETIME DEFAULT CURRENT_TIMESTAMP(),
-	permissao VARCHAR(50) NOT NULL,
+	permissao VARCHAR(50),
 	CONSTRAINT chkPermissao
 	CHECK(permissao IN('admin', 'funcionario')),
-	fkEmpresa INT NOT NULL,
+	fkEmpresa INT,
 	CONSTRAINT fkUsuarioEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(id)
 );
 
 CREATE TABLE estufa (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	dtCadastro DATETIME NOT NULL,
-	area DECIMAL(10,2) NOT NULL, 
+	dtCadastro DATETIME,
+	area DECIMAL(10,2), 
 	CONSTRAINT chkArea
 	CHECK (area > 0),
-	endereco VARCHAR(100) NOT NULL,
-	cidade VARCHAR(100) NOT NULL,
-	estado VARCHAR(100) NOT NULL,
+	endereco VARCHAR(100),
+	cidade VARCHAR(100),
+	estado VARCHAR(100),
 	dtPlantio DATETIME,
-	status VARCHAR(7) NOT NULL DEFAULT 'ativo',
+	statusx VARCHAR(7) DEFAULT 'ativo',
 	CONSTRAINT chkStatus
-	CHECK(status IN('ativo', 'inativo')),
-	fkEmpresa INT NOT NULL,
+	CHECK(statusx IN('ativo', 'inativo')),
+	fkEmpresa INT,
 	CONSTRAINT fkEstufaEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(id)
 );
 
 CREATE TABLE sensor (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	dtInstalacao DATETIME NOT NULL,
-	nSerie VARCHAR(50) NOT NULL,
-	unMedida VARCHAR(20) NOT NULL,
+	dtInstalacao DATETIME,
+	nSerie VARCHAR(50),
+	unMedida VARCHAR(20),
 	status_sensor VARCHAR(50),
 	CONSTRAINT chkStatusSensor
 	CHECK (status_sensor IN('ativo', 'inativo')),
-	idEstufa INT NOT NULL,
+	idEstufa INT,
 	CONSTRAINT fkSensorEstufa FOREIGN KEY (idEstufa) REFERENCES estufa(id)
 );
 
 CREATE TABLE leituraLuminosidade (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	dtHora DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-	lux DECIMAL(10,2) NOT NULL,
-	ppfd DECIMAL (10,2) NOT NULL,
-	dli DECIMAL (5,2) NOT NULL,
-	idSensor INT NOT NULL,
+	lux DECIMAL(10,2),
+	ppfd DECIMAL (10,2),
+	dli DECIMAL (5,2),
+	idSensor INT,
 	CONSTRAINT fkLeituraSensor FOREIGN KEY (idSensor) REFERENCES sensor(id)
 );
