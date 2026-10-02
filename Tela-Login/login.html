@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomatix - Cadastro</title>
+    <title>Tomatix - Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main class="main">
        
-                                                <!--Navbar e Header-->
+        <!-- Navbar -->
         <div class="navbar">
-            <img src="./assets/logoDark.png" class="logo-nav">
+            <img src="./assets/logo-padrao.svg" class="logo-nav">
             <div class="nav-items">
                 <a href="simulador-financeiro.html">Calculadora</a>
                 <a href="sobre.html">Sobre nós</a>
@@ -30,45 +30,42 @@
                     <img src="./assets/logo-branco.png" class="logo-branco">
                 </div>
             </div>
-                                              <!--Campos e Inputs-->
+
             <div class="login-content">
-                <form class="form-cadastro"> <!--DEIXEI APENAS PARA TESTE, REMOVER O FORM DEPOIS-->
-                    <h2>Faça seu cadastro!</h2>
-                    <p>Crie agora mesmo a sua conta</p>
-                    
+               
+                <form class="form-cadastro" id="formLogin"> <!--DEIXEI APENAS PARA TESTE, REMOVER DEPOIS-->
+                    <h2>Bem vindo de volta!</h2>
+                    <p>Por favor entre na sua conta</p>
+
+                        
                     <div class="campo-grupo">
-                        <label for="nomefull">Nome completo</label>
-                        <input type="text" id="nomefull" placeholder="Digite seu nome aqui">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="Digite seu e-mail aqui">
                     </div>
 
                     <div class="campo-grupo">
-                        <label for="email">Email:</label> 
-                        <input type="email" id="email" placeholder="Digite seu email aqui">
+                        <label for="senha">Senha</label>
+                       
+                        <input type="password" id="senha" placeholder="Digite sua senha aqui">
                     </div>
-
-                                                <!--Campo senha-->
-                    <div class="senhas-linha">
-                        <div class="campo-grupo">
-                            <label for="senha">Senha:</label>
-                            <input type="password" id="senha" placeholder="Digite sua senha aqui">
-                        </div>
-                        <div class="campo-grupo">
-                            <label for="senhachk">Confirmar senha:</label>
-                            <input type="password" id="senhachk" placeholder="Digite sua senha novamente">
-                        </div>
+                    <div><a href="#" class="esqueci-senha">Esqueceu a senha?</a>
                     </div>
-                                             <!--Botão Criar conta-->
+                        
+                   
+                        <div class="btns-linha">
                     <div class="btns-login">
-                        <button type="submit" class="btn">Criar conta</button>
+                        <button type="submit" class="btn">Login</button>
+                        <button type="button" class="btn-branco">Criar Conta</button>
+                        </div>
                     </div>
-                </form> <!--DEIXEI APENAS PARA TESTE, REMOVER O FORM DEPOIS-->
+                </form> <!--DEIXEI APENAS PARA TESTE, REMOVER DEPOIS-->
             </div>
         </div>
 
-                                                <!--Footer-->
+        <!--Footer-->
         <footer>
             <div class="footer">
-                <img src="./assets/Logo-Branca-Tomatix.svg"/>
+                <img src="./assets/Logo Branca Tomatix.svg"/>
                 <section class="footer-content">
                     <div>
                         <p>Produto</p>
@@ -87,3 +84,10 @@
     </main>
 </body>
 </html>
+
+<script>
+
+    let emailUser = email.value
+    let senha = senha.value
+
+    </script>
