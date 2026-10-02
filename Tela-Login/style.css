@@ -38,14 +38,13 @@ html {
     text-decoration: none;
 }
 
-
 .btns-nav {
     display: flex;
     gap: 10px;
     margin-left: 20px;
 }
 
-/* Cadastro Layout */
+/* Login Layout */
 .login-container {
     display: flex;
     justify-content: start;
@@ -76,9 +75,10 @@ html {
     padding: 0 10%;
 }
 
+/* Campo da "main" */
 .form-cadastro {
     width: 100%;
-    max-width: 550px;
+    max-width: 410px;
     color: var(--cor01-);
 }
 
@@ -91,6 +91,12 @@ html {
     color: #005223;
     margin-top: 5px;
     margin-bottom: 25px;
+}
+
+.btns-linha{
+    display: flex;
+    gap: 20px;
+    width: 100%;
 }
 
 /* Estrutura dos blocos de Input */
@@ -120,6 +126,17 @@ html {
     color: #a0a0a0;
 }
 
+/* link vermelho "Esqueceu a senha?" */
+.esqueci-senha {
+    color: var(--cor02-);
+    font-size: 11px;
+    text-align: right;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 25px; 
+}
+
 /* Configuração para deixar as senhas lado a lado */
 .senhas-linha {
     display: flex;
@@ -131,9 +148,12 @@ html {
     flex: 1;
 }
 
-/* Botão de cadastro */
+/* Botão de Login/Criar conta */
 .btns-login {
     margin-top: 15px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
     width: 100%;
 }
 
