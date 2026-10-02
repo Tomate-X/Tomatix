@@ -3,3 +3,231 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --cor01-: #005223;
+    --cor02-: #d11313;
+}
+
+html {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+/* Navbar */
+.logo-nav {
+    width: 10%;
+}
+
+.navbar {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-items {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 15px;
+}
+
+/* Pintar os links da nav de preto */
+.nav-items a {
+    color: #000000;         
+    text-decoration: none;
+}
+
+.btns-nav {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+/* Login Layout */
+.login-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.foto-container {
+    background-image: url(./assets/fundo-img.png);
+    height: 100vh;
+    width: 40%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-branco {
+    width: 90%;
+}
+
+/* Formulário e Inputs */
+.login-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 10%;
+}
+
+/* Campo da "main" */
+.form-cadastro {
+    width: 100%;
+    max-width: 410px;
+    color: var(--cor01-);
+}
+
+.form-cadastro h2 {
+    font-size: 28px;
+}
+
+.form-cadastro p {
+    font-size: 12px;
+    color: #005223;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.btns-linha{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Estrutura dos blocos de Input */
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.campo-grupo label {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.campo-grupo input {
+    padding: 12px 14px;
+    width: 100%;
+    border: 1px solid #005223;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.campo-grupo input::placeholder {
+    color: #a0a0a0;
+}
+
+/* link vermelho "Esqueceu a senha?" */
+.esqueci-senha {
+    color: var(--cor02-);
+    font-size: 11px;
+    text-align: right;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 25px; 
+}
+
+/* Configuração para deixar as senhas lado a lado */
+.senhas-linha {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.senhas-linha .campo-grupo {
+    flex: 1;
+}
+
+/* Botão de Login/Criar conta */
+.btns-login {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.btns-login button {
+    width: 100%;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Botões globais */
+.btn {
+    padding: 12px 20px;
+    background-color: var(--cor01-);
+    border: 1px solid var(--cor01-);
+    color: white;
+    border-radius: 4px;
+    transition: ease 0.2s;
+}
+
+.btn:hover {
+    background-color: white;
+    color: var(--cor01-);
+}
+
+.btn-branco {
+    padding: 12px 20px;
+    background-color: white;
+    color: var(--cor01-);
+    border: 1px solid var(--cor01-);
+    font-weight: 700;
+    border-radius: 4px;
+    transition: ease 0.2s;
+    cursor: pointer;
+}
+
+.btn-branco:hover {
+    color: aliceblue;
+    background-color: var(--cor01-);
+}
+
+/* Footer */
+footer {
+    background-color: #161616;
+    padding: 60px;
+    color: white;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer img {
+    width: 10%;
+}
+
+.footer-content {
+    display: flex;
+    gap: 40px;
+    font-size: 12px;
+}
+
+.footer-content p {
+    margin-bottom: 8px;
+}
+
+.hr {
+    border-top: 1px solid #a0a0a0;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    height: 1px;
+}
+
+.copy {
+    font-size: 14px;
+}
