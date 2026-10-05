@@ -3,25 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-<<<<<<< HEAD
-.logo-nav{
-    width: 10%;
-}
-.navbar{
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-.nav-items{
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-.nav-items{
-    font-size: 15px;
-}
-.btns-nav{
-=======
 
 :root {
     --cor01-: #005223;
@@ -58,13 +39,10 @@ html {
 }
 
 .btns-nav {
->>>>>>> 46794e511abe6384a35b542429aec6eef2b59304
     display: flex;
     gap: 10px;
     margin-left: 20px;
 }
-<<<<<<< HEAD
-=======
 
 /* Login Layout */
 .login-container {
@@ -253,4 +231,64 @@ footer {
 .copy {
     font-size: 14px;
 }
->>>>>>> 46794e511abe6384a35b542429aec6eef2b59304
+/* Header com fundo branco */
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    width: 100%;
+}
+
+/* Secção do meio com a imagem de fundo */
+.meio {
+    background-image: url('../Site-Institucional/assets/FUNDO\ HOME.png');
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.menor { /* Deixar a frase menor */
+    line-height: 1.5;
+    color: #e0e0e0;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+ /*Botões ao todo*/
+.botoes {
+    display: flex;
+    justify-content: center;
+}
+
+/* Botão da esquerda (Transparente com borda) */
+.btn-solucao {
+    background: transparent;
+    border: 1px solid #008744;
+    color: #ffffff;
+    padding: 12px 24px;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+/* Botão da direita (Preenchido) */
+.btn-impacto {
+    background-color: #006b35;
+    border: 1px solid #006b35;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 4px;
+}
+.btn {
+    background-color: #006b35;
+    border: 1px solid #006b35;
+    color: #ffffff;
+    padding: 12x 20px;
+    border-radius: 4px;
+    cursor: pointer
+}
