@@ -316,3 +316,26 @@ footer {
     cursor: pointer
 
 }
+
+.funcionamento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.funcionamento p{
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.funcionamento-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
