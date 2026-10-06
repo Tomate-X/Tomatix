@@ -4,6 +4,26 @@
     box-sizing: border-box;
 }
 
+
+.logo-nav{
+    width: 10%;
+}
+.navbar{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-items{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.nav-items{
+    font-size: 15px;
+}
+
+
+
 :root {
     --cor01-: #005223;
     --cor02-: #d11313;
@@ -39,10 +59,12 @@ html {
 }
 
 .btns-nav {
+
     display: flex;
     gap: 10px;
     margin-left: 20px;
 }
+
 
 /* Login Layout */
 .login-container {
@@ -230,6 +252,7 @@ footer {
 
 .copy {
     font-size: 14px;
+
 }
 /* Header com fundo branco */
 .navbar {
@@ -291,4 +314,5 @@ footer {
     padding: 12x 20px;
     border-radius: 4px;
     cursor: pointer
+
 }

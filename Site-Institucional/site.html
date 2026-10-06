@@ -4,39 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css  ">
     <title>Tomatix</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<!-- Pedro [ HOME ]-->
-<div class="home">
-    <div class="navbar">
-        <img src="../Tela-Cadastro/assets/logoDark.png" class="logo-nav">
-        <div class="nav-items">
-            <a>Calculadora</a>
-            <a>Sobre nós</a>
-            <a>Contato</a>
+    <!-- Pedro [ HOME ]-->
+    <div class="home">
+            <div class="navbar">
+            <img src="../Tela Login/assets/logo-padrao.svg" class="logo-nav">
+            <div class="nav-items">
+                <a>Calculadora</a>
+                <a>Sobre nós</a>
+                <a>Contato</a>
             <div class="btns-nav">
-                <button class="btn-branco">Login</button>
-                    <button class="btn">Cadastro</button>
+                
+            </div>
+            <button class="btn-branco">Login</button>
+            <div class="nav-bottons">
+                <button class="btn">Cadastro</button>
             </div>
         </div>
-    </div>
-
-    <div class="meio">
-        <h1>A luminosidade que você não vê pode <br>estar afetando sua produção.</h1>
-        <div class="menor"><br>
-            Transformamos a luminosidade da sua estufa em dados precisos e históricos, permitindo acompanhar as condições do cultivo de tomate-cereja e tomar decisões mais fundamentadas.
-        </div>
-        
-        <div class="botoes">
-            <button class="btn-solucao">Conheça nossa solução</button>
-            <button class="btn-impacto">Calcule seu potencial impacto</button>
+                
         </div>
     </div>
-</div>
     <!-- Philipe [ Sobre nós ]-->
 
     <!--Nathalia [Como funciona]-->
@@ -53,44 +44,52 @@
         <img src="./assets/IMAGEM-SENSOR-TOMATIX.png" alt="Imagem do sensor na plantação">
     </div>
     
-    <!-- Gabriel [ Contato / Footer ]-->
 
-    <!-- Parte do gabriel -->
-    <div class="">
-        <label for="nomeContato"></label>
-        <input type="text" id="ipt_nomeContato" placeholder="Digite seu nome aqui">
-        <br>
-        <label for="emailContato"></label>
-        <input type="text" id="ipt_emailContato" placeholder="Digite seu email aqui">
-        <br>
-        <label for="telefoneContato"></label>
-        <input type="text" id="ipt_telefoneContato" placeholder="Digite seu telefone/WhatsApp">
-        <br>
-        <label for="mensagemContato"></label>
-        <input type="text" id="ipt_mensagemContato" placeholder="Fale um pouco sobre o que você precisa">
-        <br>
-        <button onclick="conhecerSolução()">Quero conhecer a solução</button>
-    </div>
 
-    <footer>
-        <div class="footer">
-            <img src="./assets/Logo Branca Tomatix.svg" />
-            <section class="footer-content">
-                <div>
-                    <p>Produto</p>
-                    <p>Sobre Nós</p>
-                </div>
-
-                <div>
-                    <p>Empresa</p>
-                    <p>Contato</p>
-                </div>
-            </section>
+        <!-- Parte do gabriel -->
+        <div class="campo-grupo">
+            <label for="nomeContato"></label>
+            <input type="text" id="ipt_nomeContato" placeholder="Digite seu nome aqui">
         </div>
-        <div class="hr"></div>
 
-        <p class="copy">© 2026 TOMATIX. Todos os direitos reservados.</p>
-    </footer>
+        <div class="campo-grupo">
+            <label for="emailContato"></label>
+            <input type="text" id="ipt_emailContato" placeholder="Digite seu email aqui">
+        </div>
+
+        <div class="campo-grupo">
+            <label for="telefoneContato"></label>
+            <input type="text" id="ipt_telefoneContato" placeholder="Digite seu telefone/WhatsApp">
+        </div>
+
+        <div class="campo-grupo">
+            <label for="mensagemContato"></label>
+            <input type="text" id="ipt_mensagemContato" placeholder="Fale um pouco sobre o que você precisa">
+        </div>
+
+
+        <button onclick="conhecerSolução()" class="btn">Quero conhecer a solução</button>
+
+
+        <footer>
+            <div class="footer">
+                <img src="./assets/Logo Branca Tomatix.svg" />
+                <section class="footer-content">
+                    <div>
+                        <p>Produto</p>
+                        <p>Sobre Nós</p>
+                    </div>
+
+                    <div>
+                        <p>Empresa</p>
+                        <p>Contato</p>
+                    </div>
+                </section>
+            </div>
+            <div class="hr"></div>
+
+            <p class="copy">© 2026 TOMATIX. Todos os direitos reservados.</p>
+        </footer>
 </body>
 
 </html>
