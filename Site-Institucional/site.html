@@ -11,6 +11,8 @@
 
 <body>
 <!-- Pedro [ HOME ]-->
+
+
 <div class="home">
     <div class="navbar">
         <img src="../Tela-Cadastro/assets/logoDark.png" class="logo-nav">
@@ -27,9 +29,9 @@
     </div>
 
     <div class="meio">
-        <h1>A luminosidade que você não vê pode <br>estar afetando sua produção.</h1>
+        <h1>A luminosidade que você não vê<br>pode estar afetando sua produção.</h1>
         <div class="menor"><br>
-            <p>Transformamos a luminosidade da sua estufa em dados precisos e históricos, permitindo acompanhar as condições do cultivo de tomate-cereja e tomar decisões mais fundamentadas.</p>
+            <p>Transformamos a luminosidade da sua estufa em dados precisos e históricos,permitindo acompanhar as condições do cultivo de tomate-cereja e tomar decisões mais fundamentadas.</p>
         </div>
         
         <div class="botoes">
@@ -39,6 +41,42 @@
     </div>
 </div>
     <!-- Philipe [ Sobre nós ]-->
+
+
+     <div class="sobre-nos">
+    <div class="cabeçario_sobre">
+        <span class="subtitulo">Oque a TOMATIX mede?</span>
+        <h2>Como ajudamos você a produzir melhor?</h2>
+        <p>Monitoramos as métricas de luz que impulsionam diretamente o crescimento e qualidade dos tomates, para que você sempre saiba exatamente o que suas plantas estão recebendo.</p>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="icone-caixa">
+                <img src="./assets/ICONE-PLANTA.png" alt="Icone planta">
+            </div>
+            <h3>1. Quem somos</h3>
+            <p>Somos uma equipe dedicada ao desenvolvimento de soluções tecnológicas para o cultivo protegido.</p>
+        </div>
+
+        <div class="card">
+            <div class="icone-caixa">
+                <img src="./assets/icone_sol.png" alt="icone-sol">
+            </div>
+            <h3>2. O que fazemos</h3>
+            <p>Um sistema que monitora a luminosidade em estufas de tomate-cereja e entrega dados precisos e históricos.</p>
+        </div>
+
+        <div class="card">
+            <div class="icone-caixa">
+                <img src="./assets/icone-obj.png" alt="icone-obj">
+            </div>
+            <h3>3. Nosso objetivo</h3>
+            <p>Ajudamos produtores a compreender a luminosidade de suas estufas e tomar decisões de cultivo mais assertivas.</p>
+        </div>
+    </div>
+</div>
+
 
     <!--Nathalia [Como funciona]-->
      <div class="funcionamento">
@@ -57,21 +95,41 @@
     <!-- Gabriel [ Contato / Footer ]-->
 
     <!-- Parte do gabriel -->
-    <div class="">
-        <label for="nomeContato"></label>
-        <input type="text" id="ipt_nomeContato" placeholder="Digite seu nome aqui">
-        <br>
-        <label for="emailContato"></label>
-        <input type="text" id="ipt_emailContato" placeholder="Digite seu email aqui">
-        <br>
-        <label for="telefoneContato"></label>
-        <input type="text" id="ipt_telefoneContato" placeholder="Digite seu telefone/WhatsApp">
-        <br>
-        <label for="mensagemContato"></label>
-        <input type="text" id="ipt_mensagemContato" placeholder="Fale um pouco sobre o que você precisa">
-        <br>
-        <button onclick="conhecerSolução()">Quero conhecer a solução</button>
+    <div class="contato-secao">
+    <div class="contato-info">
+        <span class="subtitulo-contato">Contato</span>
+        <h2>Veja a luz da sua plantação de uma nova maneira</h2>
+        <p>Quer entender melhor as condições de luminosidade da sua estufa? Entre em contato conosco e descubra como a TOMATIX pode ajudar sua produção.</p>
+        
+        <div class="contato-imagem">
+            <img src="./assets/imagem-fale-conosco.png" alt="Agricultor analisando dados da estufa">
+        </div>
     </div>
+
+<div class="contato-formulario">
+        <div class="campo-grupo">
+            <label for="ipt_nomeContato">Nome:</label>
+            <input type="text" id="ipt_nomeContato" placeholder="Digite seu nome aqui">
+        </div>
+
+        <div class="campo-grupo">
+            <label for="ipt_emailContato">Email:</label>
+            <input type="text" id="ipt_emailContato" placeholder="Digite seu email aqui">
+        </div>
+
+        <div class="campo-grupo">
+            <label for="ipt_telefoneContato">Telefone:</label>
+            <input type="text" id="ipt_telefoneContato" placeholder="Digite seu telefone/WhatsApp">
+        </div>
+
+        <div class="campo-grupo">
+            <label for="ipt_mensagemContato">Mensagem:</label>
+            <textarea id="ipt_mensagemContato" placeholder="Fale um pouco sobre o que você precisa"></textarea>
+</div>
+
+        <button class="btn-enviar" onclick="conhecerSolução()">Quero conhecer a solução</button>
+    </div>
+</div>
 
     <footer>
         <div class="footer">
