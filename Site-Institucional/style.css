@@ -275,13 +275,22 @@ footer {
     height: 100vh;
     color: #ffffff;
     padding: 0 20px;
+    text-align: center; /* Centralizar o texto pra ficar igual a do figma */
 }
-
-.menor { /* Deixar a frase menor */
-    line-height: 1.5;
+/* Frase central da home */
+.meio h1{
+    font-size: 48px;
+    font-weight: 700; 
+    margin-bottom: 24px;
+    max-width: 900px;
+}
+/* Deixar a frase menor */
+.menor {
+    font-weight: 400;
+    font-size: 28px;
     color: #e0e0e0;
-    max-width: 800px;
-    margin-bottom: 30px;
+    max-width: 852px;
+    margin-bottom: 40px;
 }
  /*Botões ao todo*/
 .botoes {
@@ -297,15 +306,31 @@ footer {
     padding: 12px 24px;
     margin-right: 15px;
     border-radius: 4px;
+    cursor: pointer;
+    transition: ease 0.9s;
+}
+/*  Adicionando animação no botão de solução com :hover|cursor|transition */
+.btn-solucao:hover{ 
+    background-color: #008744;
+    border: 1px solid #008744;
+    color: #ffffff; 
 }
 
 /* Botão da direita (Preenchido) */
 .btn-impacto {
-    background-color: #006b35;
+    background-color: var(--cor01-);
     border: 1px solid #006b35;
     color: #ffffff;
     padding: 12px 24px;
     border-radius: 4px;
+    transition: ease 0.9s;
+    cursor: pointer;
+}
+/*  Adicionando animação no botão de impacto com :hover|cursor|transition */
+.btn-impacto:hover{
+    background-color: #ffffff;
+    border: 1px solid #008744;
+    color: #006b35; 
 }
 .btn {
     background-color: #006b35;
@@ -316,7 +341,6 @@ footer {
     cursor: pointer
 
 }
-
 .funcionamento{
     display: flex;
     justify-content: center;
