@@ -14,8 +14,8 @@ html {
 }
 
 /* Navbar */
-.logo-nav {
-    width: 10%;
+.logo-nav{
+    width: 80%;
 }
 
 .navbar {
@@ -128,11 +128,11 @@ html {
 
 /* link vermelho "Esqueceu a senha?" */
 .esqueci-senha {
-    color: var(--cor02-);
+    color: var(--cor01-);
     font-size: 11px;
     text-align: right;
     display: block;
-    text-decoration: none;
+    text-decoration: underline ;
     font-weight: 600;
     margin-bottom: 25px; 
 }

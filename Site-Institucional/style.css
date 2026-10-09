@@ -1,10 +1,13 @@
 * {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    padding: 0; /* Zera o padding e margin padrão dos elementos */
+    box-sizing: border-box; 
+    /* Mantém o width/height do elemento quando é adicionado padding ou border */
+    scroll-behavior: smooth; /* Deixa o scrool suave */
 }
-
-
+a{
+    text-decoration: none;
+}
 .logo-nav{
     width: 10%;
 }
@@ -21,8 +24,6 @@
 .nav-items{
     font-size: 15px;
 }
-
-
 
 :root {
     --cor01-: #005223;
@@ -290,10 +291,13 @@ footer {
 /* Deixar a frase menor */
 .menor {
     font-weight: 400;
-    font-size: 28px;
+    font-size: 20px;
     color: #e0e0e0;
     max-width: 852px;
     margin-bottom: 40px;
+}
+.menor p{
+    width: 680px;
 }
  /*Botões ao todo*/
 .botoes {
@@ -346,6 +350,7 @@ footer {
     cursor: pointer
 
 }
+
 .funcionamento{
     display: flex;
     justify-content: center;
@@ -356,8 +361,13 @@ footer {
     margin-bottom: 20px;
 }
 
+.funcionamento h2{
+    font-weight: 100;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
 .funcionamento p{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: normal;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -368,10 +378,13 @@ footer {
     justify-content: center;
     align-items: center;
 }
-
+.funcionamento-img img{
+    border-radius: 10px;
+    border: 30px solid #006b35;
+}
 .sobre-nos {
     background-color: #f2f7f4;
-    padding: 80px 10%;
+    padding: 100px 10%;
     color: #111111;
 }
 
