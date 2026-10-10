@@ -221,6 +221,22 @@ footer {
     margin-bottom: 8px;
 }
 
+.footer a{
+    color: #ffffff;         
+    text-decoration: none;
+}
+.footer-coluna{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.footer-coluna a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+}
+
 .hr {
     border-top: 1px solid #a0a0a0;
     margin-bottom: 20px;
