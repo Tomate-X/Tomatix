@@ -217,7 +217,7 @@ html {
     background-color: var(--cor01-);
 }
 
-/* Footer */
+                                            /* Footer */
 footer {
     background-color: #161616;
     padding: 60px;
@@ -242,6 +242,21 @@ footer {
 
 .footer-content p {
     margin-bottom: 8px;
+}
+.footer a{
+    color: #ffffff;         
+    text-decoration: none;
+}
+.footer-coluna{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.footer-coluna a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 .hr {
