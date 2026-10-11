@@ -1,6 +1,554 @@
-/* Reset CSS */
-*{
+* {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    padding: 0; /* Zera o padding e margin padrão dos elementos */
+    box-sizing: border-box; 
+    /* Mantém o width/height do elemento quando é adicionado padding ou border */
+    scroll-behavior: smooth; /* Deixa o scrool suave */
+}
+a{
+    text-decoration: none;
+}
+
+:root {
+    --cor01-: #005223;
+    --cor02-: #d11313;
+}
+
+html {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+/* Navbar */
+.logo-nav {
+    width: 40%;
+}
+
+.navbar {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-items {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 15px;
+}
+
+/* Pintar os links da nav de preto */
+.nav-items a {
+    color: #000000;         
+    text-decoration: none;
+}
+
+.btns-nav {
+
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+
+/* Login Layout */
+.login-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.foto-container {
+    background-image: url(./assets/fundo-img.png);
+    height: 100vh;
+    width: 40%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-branco {
+    width: 90%;
+}
+
+/* Formulário e Inputs */
+.login-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 10%;
+}
+
+/* Campo da "main" */
+.form-cadastro {
+    width: 100%;
+    max-width: 410px;
+    color: var(--cor01-);
+}
+
+.form-cadastro h2 {
+    font-size: 28px;
+}
+
+.form-cadastro p {
+    font-size: 12px;
+    color: #005223;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.btns-linha{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Estrutura dos blocos de Input */
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.campo-grupo label {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.campo-grupo input {
+    padding: 12px 14px;
+    width: 100%;
+    border: 1px solid #005223;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.campo-grupo input::placeholder {
+    color: #a0a0a0;
+}
+
+/* link vermelho "Esqueceu a senha?" */
+.esqueci-senha {
+    color: var(--cor02-);
+    font-size: 11px;
+    text-align: right;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 25px; 
+}
+
+/* Configuração para deixar as senhas lado a lado */
+.senhas-linha {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.senhas-linha .campo-grupo {
+    flex: 1;
+}
+
+/* Botão de Login/Criar conta */
+.btns-login {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.btns-login button {
+    width: 100%;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Botões globais */
+.btn {
+    padding: 12px 20px;
+    background-color: var(--cor01-);
+    border: 1px solid var(--cor01-);
+    color: white;
+    border-radius: 4px;
+    transition: ease 0.2s;
+}
+
+.btn:hover {
+    background-color: white;
+    color: var(--cor01-);
+}
+
+.btn-branco {
+    padding: 12px 20px;
+    background-color: white;
+    color: var(--cor01-);
+    border: 1px solid var(--cor01-);
+    font-weight: 700;
+    border-radius: 4px;
+    transition: ease 0.2s;
+    cursor: pointer;
+}
+
+.btn-branco:hover {
+    color: aliceblue;
+    background-color: var(--cor01-);
+}
+
+                                            /* Footer */
+footer {
+    background-color: #161616;
+    padding: 60px;
+    color: white;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer img {
+    width: 10%;
+}
+
+.footer-content {
+    display: flex;
+    gap: 40px;
+    font-size: 12px;
+}
+
+.footer-content p {
+    margin-bottom: 8px;
+}
+.footer a{
+    color: #ffffff;         
+    text-decoration: none;
+}
+.footer-coluna{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.footer-coluna a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.hr {
+    border-top: 1px solid #a0a0a0;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    height: 1px;
+}
+
+.copy {
+    font-size: 14px;
+
+}
+/* Header com fundo branco */
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    width: 100%;
+}
+
+/* Secção do meio com a imagem de fundo */
+.meio {
+    background-image: url('../Site-Institucional/assets/FUNDO\ HOME.png');
+
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+    padding: 0 20px;
+    text-align: center; /* Centralizar o texto pra ficar igual a do figma */
+}
+/* Frase central da home */
+.meio h1{
+    font-size: 48px;
+    font-weight: 700; 
+    margin-bottom: 15px;
+    max-width: 900px;
+}
+/* Deixar a frase menor */
+.menor {
+    font-weight: 400;
+    font-size: 20px;
+    color: #e0e0e0;
+    max-width: 852px;
+    margin-bottom: 40px;
+}
+.menor p{
+    width: 680px;
+}
+ /*Botões ao todo*/
+.botoes {
+    display: flex;
+    justify-content: center;
+}
+
+/* Botão da esquerda (Transparente com borda) */
+.btn-solucao {
+    background: transparent;
+    border: 1px solid #008744;
+    color: #ffffff;
+    padding: 15px 40px;
+    margin-right: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: ease 0.9s;
+}
+/*  Adicionando animação no botão de solução com :hover|cursor|transition */
+.btn-solucao:hover{ 
+    background-color: #008744;
+    border: 1px solid #008744;
+    color: #ffffff; 
+}
+
+/* Botão da direita (Preenchido) */
+.btn-impacto {
+    background-color: var(--cor01-);
+    border: 1px solid #006b35;
+    color: #ffffff;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: ease 0.9s;
+    cursor: pointer;
+}
+/*  Adicionando animação no botão de impacto com :hover|cursor|transition */
+.btn-impacto:hover{
+    background-color: #ffffff;
+    border: 1px solid #008744;
+    color: #006b35; 
+}
+.btn {
+    background-color: #006b35;
+    border: 1px solid #006b35;
+    color: #ffffff;
+    padding: 12x 20px;
+    border-radius: 4px;
+    cursor: pointer
+
+}
+
+.funcionamento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.funcionamento h2{
+    font-weight: 100;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+.funcionamento p{
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.funcionamento-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.funcionamento-img img{
+    border-radius: 10px;
+    border: 30px solid #006b35;
+}
+.sobre-nos {
+    background-color: #f2f7f4;
+    padding: 100px 10%;
+    color: #111111;
+}
+
+.cabeçario_sobre {
+    max-width: 750px;
+    margin-bottom: 50px;
+}
+
+.cabeçario_sobre .subtitulo {
+    color: #005223;      
+    font-weight: 700;
+    font-size: 20px;      
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.cabeçario_sobre h2 {
+    font-size: 40px;
+    color: #000000;
+    margin: 10px 0 15px 0;
+    font-weight: 700;
+}
+
+.cabeçario_sobre p {
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; 
+}
+
+.card {
+    flex: 1;
+}
+
+.icone-caixa {
+    width: 75px;
+    height: 75px;
+    border: 1.5px solid #005223;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.icone-caixa img {
+    width: 38px;
+    height: 38px;
+}
+
+.card h3 {
+    font-size: 22px;
+    color: #005223;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.card p {
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.contato-secao {
+    background-color: #005223;
+    padding: 80px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    margin-top: 50px;
+    color: #ffffff;
+}
+
+.contato-info {
+    flex: 1;
+}
+
+.subtitulo-contato {
+    font-size: 18px;
+    font-weight: 300;
+    color: #80FFB6;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.contato-info h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.contato-info p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.contato-imagem img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.contato-formulario {
+    flex: 0.80;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-grupo label {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.campo-grupo input,
+.campo-grupo textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333333;
+    outline: none;
+    height: 50px;
+    font-family: Arial, sans-serif;
+}
+
+.campo-grupo textarea {
+    height: 180px;
+    resize: none;
+}
+.btn-enviar {
+    background-color: #00C006;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #00C006;
+    background-color: #008744;
+    border: 1px solid #008744;
+    color: #ffffff; 
 }

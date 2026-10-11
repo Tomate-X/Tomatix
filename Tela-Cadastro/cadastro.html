@@ -1,42 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>TomatíX</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomatix - Cadastro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="navbar">
-    <img src="assets/logoDark.png" alt="logoNavbar">
-    <div> <!-- Header-->
-      <a href="">Calculadora</a>
-      <a href="">Sobre nós</a>
-      <a href="">Contato</a>
-      <button class="login">Login</button>
-      <button class="cadastro">Cadastro</button>
-    </div>
-  </div>
- <!-- Fim do header-->
-
-  <!-- Parte do login e imagem-->
-    <div class="body">
-      <img src="assets/fundo.png" alt="fundoBody">
-      <div class="logoCentro">
-         <img src="assets/logoLight.png" alt="logoCentro">
-      </div>
-    </div>
-     <!-- Fim do login e imagem-->
-    
-      <!-- Footer-->
-     <div class="footer">
-      <div class="logoMini"> </div>
-       <div class="container">
-            <h4>© 2026 TOMATIX. Todos os direitos reservados.</h4>
-            <h4 class="politica">Política de privacidade</h4>
-             <h4 class="termos">Termos de Serviço</h4>
+    <main class="main">       
+                                                <!--Navbar e Header-->
+        <div class="navbar">
+            <a href="../Site-Institucional/site.html">
+                <img src="./assets/logoDark.png" class="logo-nav">
+            </a>
+            <div class="nav-items">
+                <a href="../Calculadora/simulador-financeiro.html">Calculadora</a>
+                <a href="../Site-Institucional/site.html">Sobre nós</a>
+                <a href="../Site-Institucional/site.html#contato">Contato</a>
+                <div class="btns-nav">
+                    <a href="../Tela-Login/login.html"><button class="btn-branco">Login</button></a>
+                <a href="../Tela-Cadastro/cadastro.html"><button class="btn">Cadastro</button></a>
+                </div>
+            </div>
         </div>
-     </div>
-      <!-- Fim do footer-->
+
+        <div class="login-container">
+            <div class="foto-container">
+                <div>
+                    <img src="./assets/logo-branco.png" class="logo-branco">
+                </div>
+            </div>
+                                              <!--Campos e Inputs-->
+            <div class="login-content">
+                <form class="form-cadastro"> <!--DEIXEI APENAS PARA TESTE, REMOVER O FORM DEPOIS-->
+                    <h2>Faça seu cadastro!</h2>
+                    <p>Crie agora mesmo a sua conta</p>
+                    
+                    <div class="campo-grupo">
+                        <label for="nomefull">Nome completo</label>
+                        <input type="text" id="nomefull" placeholder="Digite seu nome aqui">
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="email">Email:</label> 
+                        <input type="email" id="email" placeholder="Digite seu email aqui">
+                    </div>
+
+                                                <!--Campo senha-->
+                    <div class="senhas-linha">
+                        <div class="campo-grupo">
+                            <label for="senha">Senha:</label>
+                            <input type="password" id="senha" placeholder="Digite sua senha aqui">
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="senhachk">Confirmar senha:</label>
+                            <input type="password" id="senhachk" placeholder="Digite sua senha novamente">
+                        </div>
+                    </div>
+                                             <!--Botão Criar conta-->
+                    <div class="btns-login">
+                        <button type="submit" class="btn">Criar conta</button>
+                    </div>
+                </form> <!--DEIXEI APENAS PARA TESTE, REMOVER O FORM DEPOIS-->
+            </div>
+        </div>
+
+                                                <!--Footer-->
+      <footer>
+        <div class="footer" id="footer">
+            <img src="./assets/logo-branco.png" alt="logo-footer" />
+            <div class="footer-content">
+                <div class="footer-coluna">
+                    <a href="../Site-Institucional/site.html#sobre-nos">Produto</a>
+                    <a href="../Site-Institucional/site.html#sobre-nos">Sobre nós</a>
+                </div>
+                <div class="footer-coluna">
+                    <a href="../Site-Institucional/site.html#empresa">Empresa</a>
+                    <a href="../Site-Institucional/site.html#contato">Contato</a>
+                </div>
+            </div>
+        </div>
+        <div class="hr"></div>
+
+        <p class="copy">© 2026 TOMATIX. Todos os direitos reservados.</p>
+    </footer>
+
+    </main>
 </body>
 </html>
