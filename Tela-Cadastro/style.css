@@ -68,25 +68,24 @@ html {
     width: 90%;
 }
 
-/* Formulário e Inputs */
-.login-content {
+/* Campos de cadastro*/
+.login-content.div-cadastro {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 0 10%;
-}
-
-.form-cadastro {
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     max-width: 550px;
     color: var(--cor01-);
 }
 
-.form-cadastro h2 {
+.div-cadastro h2 {
     font-size: 28px;
 }
 
-.form-cadastro p {
+.div-cadastro p {
     font-size: 12px;
     color: #005223;
     margin-top: 5px;

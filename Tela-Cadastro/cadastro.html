@@ -30,66 +30,116 @@
                     <img src="./assets/logo-branco.png" class="logo-branco">
                 </div>
             </div>
+
                                               <!--Campos e Inputs-->
-            <div class="login-content">
-                <form class="form-cadastro"> <!--DEIXEI APENAS PARA TESTE, REMOVER O FORM DEPOIS-->
-                    <h2>Faça seu cadastro!</h2>
-                    <p>Crie agora mesmo a sua conta</p>
-                    
-                    <div class="campo-grupo">
-                        <label for="nomefull">Nome completo</label>
-                        <input type="text" id="nomefull" placeholder="Digite seu nome aqui">
-                    </div>
+            <div class="login-content div-cadastro"> 
+                <h2>Faça seu cadastro!</h2>
+                <p>Crie agora mesmo a sua conta</p>
+                
+                <div class="campo-grupo">
+                    <label for="nomefull">Nome completo</label>
+                    <input type="text" id="nomefull" placeholder="Digite seu nome aqui">
+                </div>
 
-                    <div class="campo-grupo">
-                        <label for="text">Token:</label> 
-                        <input type="text" id="token" placeholder="Digite o token vinculado a sua empresa aqui">
-                    </div>
+                <div class="campo-grupo">
+                    <label for="token">Token:</label> 
+                    <input type="text" id="token" placeholder="Digite o token vinculado a sua empresa aqui">
+                </div>
 
-                    <div class="campo-grupo">
-                        <label for="email">Email:</label> 
-                        <input type="email" id="email" placeholder="Digite seu email aqui">
-                    </div>
+                <div class="campo-grupo">
+                    <label for="email">Email:</label> 
+                    <input type="text" id="email" placeholder="Digite seu email aqui"> <!-- Mudado para text -->
+                </div>
 
-                                                <!--Campo senha-->
-                    <div class="senhas-linha">
-                        <div class="campo-grupo">
-                            <label for="senha">Senha:</label>
-                            <input type="password" id="senha" placeholder="Digite sua senha aqui">
-                        </div>
-                        <div class="campo-grupo">
-                            <label for="senhachk">Confirmar senha:</label>
-                            <input type="password" id="senhachk" placeholder="Digite sua senha novamente">
-                        </div>
+                <!--Campo senha-->
+                <div class="senhas-linha">
+                    <div class="campo-grupo">
+                        <label for="senha" >Senha:</label>
+                        <input type="text" id="senha" placeholder="Digite sua senha aqui"> <!-- Mudado para text -->
                     </div>
-                                             <!--Botão Criar conta-->
-                    <div class="btns-login">
-                        <button type="submit" class="btn">Criar conta</button>
+                    <div class="campo-grupo">
+                        <label for="senhachk">Confirmar senha:</label>
+                        <input type="text" id="senhachk" placeholder="Digite sua senha novamente"> <!-- Mudado para text -->
                     </div>
-                </form> <!--DEIXEI APENAS PARA TESTE, REMOVER O FORM DEPOIS-->
-            </div>
+                </div>
+                
+                <!--Botão Criar conta-->
+                <div class="btns-login">
+                    <button onclick="enviar()"id="btn-enviar" class="btn">Criar conta</button>
+                </div>
+            </div> 
         </div>
 
-                                                <!--Footer-->
-      <footer>
-        <div class="footer" id="footer">
-            <img src="./assets/logo-branco.png" alt="logo-footer" />
-            <div class="footer-content">
-                <div class="footer-coluna">
-                    <a href="../Site-Institucional/site.html#sobre-nos">Produto</a>
-                    <a href="../Site-Institucional/site.html#sobre-nos">Sobre nós</a>
-                </div>
-                <div class="footer-coluna">
-                    <a href="../Site-Institucional/site.html#empresa">Empresa</a>
-                    <a href="../Site-Institucional/site.html#contato">Contato</a>
+        <!--Footer-->
+        <footer>
+            <div class="footer" id="footer">
+                <img src="./assets/logo-branco.png" alt="logo-footer" />
+                <div class="footer-content">
+                    <div class="footer-coluna">
+                        <a href="../Site-Institucional/site.html#sobre-nos">Produto</a>
+                        <a href="../Site-Institucional/site.html#sobre-nos">Sobre nós</a>
+                    </div>
+                    <div class="footer-coluna">
+                        <a href="../Site-Institucional/site.html#empresa">Empresa</a>
+                        <a href="../Site-Institucional/site.html#contato">Contato</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="hr"></div>
-
-        <p class="copy">© 2026 TOMATIX. Todos os direitos reservados.</p>
-    </footer>
-
+            <div class="hr"></div>
+            <p class="copy">© 2026 TOMATIX. Todos os direitos reservados.</p>
+        </footer>
     </main>
+
+    <!--Script para controlar os campos-->
+    <script>
+
+        // falta validar a se o email tem arroba e mascarar a senha, além do código de token
+     function enviar() {
+            
+            let NomeCompleto = nomefull.value;
+            let tokenValor = token.value;
+            let emailValor = email.value;
+            let senhaValor = senha.value;
+            let ConfirmarSenha = senhachk.value;
+
+            let cadastroValido = 1;
+
+            // Validação de campos vazios
+            if (NomeCompleto == "") {
+                cadastroValido = 0;
+            }
+            if (tokenValor == "") {
+                cadastroValido = 0;
+            }
+            if (emailValor == "") {
+                cadastroValido = 0;
+            }
+            if (senhaValor == "") {
+                cadastroValido = 0;
+            }
+
+            // Exibe mensagem caso falte algum campo preenchido
+            if (cadastroValido == 0) {
+                alert("Por favor, preencha todos os campos obrigatórios!");
+            } else {
+                // Validação se as senhas são iguais
+                if (senhaValor !== ConfirmarSenha) {
+                    cadastroValido = 0;
+                    alert("As senhas não são iguais!");
+                }
+            }
+
+            // se der tudo certo, passa pro console
+            if (cadastroValido == 1) {
+                console.log("Nome completo:", NomeCompleto);
+                console.log("Token:", tokenValor);
+                console.log("Email:", emailValor);
+                console.log("Senha:", senhaValor);
+                
+                alert("Cadastro realizado com sucesso! (Passou no console? deu certo!!!)");
+            }
+        }
+    </script>
+
 </body>
 </html>
