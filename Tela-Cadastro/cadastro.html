@@ -55,11 +55,11 @@
                 <div class="senhas-linha">
                     <div class="campo-grupo">
                         <label for="senha" >Senha:</label>
-                        <input type="text" id="senha" placeholder="Digite sua senha aqui"> <!-- Mudado para text -->
+                        <input type="text" id="senha" onkeyup="mascararSenha()" placeholder="Digite sua senha aqui"> <!-- Mudado para text -->
                     </div>
                     <div class="campo-grupo">
                         <label for="senhachk">Confirmar senha:</label>
-                        <input type="text" id="senhachk" placeholder="Digite sua senha novamente"> <!-- Mudado para text -->
+                        <input type="text" id="senhachk" onkeyup="mascararConfirmacao()" placeholder="Digite sua senha novamente"> <!-- Mudado para text -->
                     </div>
                 </div>
                 
@@ -93,16 +93,78 @@
     <!--Script para controlar os campos-->
     <script>
 
+            // variáveis globais para guardar os valores das senhas sem perder eles no tratamento de censura 
+            let senhaReal = "";
+            let confirmarSenhaReal = "";
+
+            function mascararSenha(){
+                let valorDigitado = senha.value;
+
+                // caso digitem mais um valor, ele pega a última letra e soma na senha
+                if(valorDigitado.length > senhaReal.length){
+                    let ultimoDigito = valorDigitado[valorDigitado.length - 1];
+                    senhaReal += ultimoDigito;
+                }
+
+                // caso apaguem algum valor, ele diminui os caracteres da senha
+                else if (valorDigitado.length < senhaReal.length){
+                    let novaSenha = "";
+                    let x = 0; // valor para achar a posição do index
+                    while(x < valorDigitado.length){
+                        novaSenha += senhaReal[x];
+                        x++;
+                    }
+                    senhaReal = novaSenha;
+                }
+
+                // faz a troca dos algarismos para *******
+                let asteriscos = "";
+                let y = 0;
+                while(y < senhaReal.length){
+                    asteriscos += "*";
+                    y++;
+                }
+                senha.value = asteriscos;
+            }
+
+            function mascararConfirmacao(){
+                let valorDigitadoChk = senhachk.value;
+
+                if(valorDigitadoChk.length > confirmarSenhaReal.length){
+                    let ultimoDigito = valorDigitadoChk[valorDigitadoChk.length -1];
+                    confirmarSenhaReal += ultimoDigito;
+                }
+                else if (valorDigitadoChk.length < confirmarSenhaReal.length){
+                    let novaSenhaChk = "";
+                    let x2 = 0; // valor para achar a posição do index
+                    while(x2 < valorDigitadoChk.length){
+                        novaSenhaChk += confirmarSenhaReal[x2];
+                        x2++;
+                    }
+                    confirmarSenhaReal = novaSenhaChk;
+                }
+
+                let asteriscosChk = "";
+                let y2 = 0;
+                while(y2 < confirmarSenhaReal.length){
+                    asteriscosChk += "*";
+                    y2++;
+                }
+                senhachk.value = asteriscosChk;
+            }
         // falta validar a se o email tem arroba e mascarar a senha, além do código de token
      function enviar() {
             
             let NomeCompleto = nomefull.value;
             let tokenValor = token.value;
+            let tokenCadastrado = 'PJX59';
             let emailValor = email.value;
-            let senhaValor = senha.value;
-            let ConfirmarSenha = senhachk.value;
+
+            let senhaValor = senhaReal;
+            let confirmarSenha = confirmarSenhaReal;
 
             let cadastroValido = 1;
+
 
             // Validação de campos vazios
             if (NomeCompleto == "") {
@@ -123,18 +185,40 @@
                 alert("Por favor, preencha todos os campos obrigatórios!");
             } else {
                 // Validação se as senhas são iguais
-                if (senhaValor !== ConfirmarSenha) {
+                if (senhaValor !== confirmarSenha) {
                     cadastroValido = 0;
                     alert("As senhas não são iguais!");
                 }
+                if (tokenValor != tokenCadastrado){
+                    alert("Token inválido, insira o token associado à sua empresa!")
+                    cadastroValido = 0;
+                }
             }
 
-            // se der tudo certo, passa pro console
+
+           // Se der tudo certo, passa pro console
+
             if (cadastroValido == 1) {
+                // Criando as variáveis censuradas 
+                let textoCensurado = "";
+                let cx = 0;
+                while (cx < senhaValor.length) {
+                    textoCensurado += "*";
+                    cx++;
+                }
+
+                let checkCensurado = "";
+                let cy = 0;
+                while (cy < confirmarSenha.length) {
+                    checkCensurado += "*";
+                    cy++;
+                }
+
                 console.log("Nome completo:", NomeCompleto);
                 console.log("Token:", tokenValor);
                 console.log("Email:", emailValor);
-                console.log("Senha:", senhaValor);
+                console.log("Senha:", textoCensurado);
+                console.log("Confirmar Senha:", checkCensurado);
                 
                 alert("Cadastro realizado com sucesso! (Passou no console? deu certo!!!)");
             }
