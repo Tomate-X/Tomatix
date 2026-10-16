@@ -67,7 +67,7 @@ html {
     width: 90%;
 }
 
-/* Formulário e Inputs */
+/* campo login e inputs */
 .login-content {
     flex: 1;
     display: flex;
@@ -76,17 +76,17 @@ html {
 }
 
 /* Campo da "main" */
-.form-cadastro {
+.div-cadastro {
     width: 100%;
     max-width: 410px;
     color: var(--cor01-);
 }
 
-.form-cadastro h2 {
+.div-cadastro h2 {
     font-size: 28px;
 }
 
-.form-cadastro p {
+.div-cadastro p {
     font-size: 12px;
     color: #005223;
     margin-top: 5px;
@@ -161,6 +161,20 @@ html {
     width: 100%;
     font-weight: 700;
     cursor: pointer;
+}
+
+.btns-login button,
+.btns-login a.btn-branco {
+    flex: 1;
+}
+
+.btns-login a button {
+    width: 100%;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 /* Botões globais */

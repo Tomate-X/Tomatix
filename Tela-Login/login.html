@@ -35,20 +35,19 @@
 
             <div class="login-content">
                
-                <form class="form-cadastro" id="formLogin"> <!--DEIXEI APENAS PARA TESTE, REMOVER DEPOIS-->
+                <div class="div-cadastro" id="divLogin">
                     <h2>Bem vindo de volta!</h2>
                     <p>Por favor entre na sua conta</p>
 
-                        
                     <div class="campo-grupo">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="Digite seu e-mail aqui">
+                        <input type="text" id="email" placeholder="Digite seu e-mail aqui">
                     </div>
 
                     <div class="campo-grupo">
                         <label for="senha">Senha</label>
                        
-                        <input type="password" id="senha" placeholder="Digite sua senha aqui">
+                        <input type="text" id="senha" onkeyup="mascararSenha()" placeholder="Digite sua senha aqui">
                     </div>
                     <div><a href="#" class="esqueci-senha">Esqueceu a senha?</a>
                     </div>
@@ -56,11 +55,11 @@
                    
                         <div class="btns-linha">
                     <div class="btns-login">
-                        <button type="submit" class="btn">Login</button>
-                        <button type="button" class="btn-branco">Criar Conta</button>
+                        <button onclick="entrar()" class="btn">Login</button>
+                        <a href="../Tela-Cadastro/cadastro.html" style="flex: 1; text-decoration: none;"><button onclick="" class="btn-branco">Criar Conta</button></a>
                         </div>
                     </div>
-                </form> <!--DEIXEI APENAS PARA TESTE, REMOVER DEPOIS-->
+                </div>
             </div>
         </div>
 
@@ -91,7 +90,67 @@
 
 <script>
 
-    let emailUser = email.value
-    let senha = senha.value
+    let senhaReal = ""; // variável global para guardar a senha
+
+        function mascararSenha() {
+            let valorDigitado = senha.value;
+
+            // se digitou algo a mais
+            if (valorDigitado.length > senhaReal.length) {
+                let ultimoDigito = valorDigitado[valorDigitado.length - 1];
+                senhaReal += ultimoDigito;
+            }
+            // se apagou algum valor
+            else if (valorDigitado.length < senhaReal.length) {
+                let novaSenha = "";
+                let x = 0;
+                while (x < valorDigitado.length) {
+                    novaSenha += senhaReal[x];
+                    x++;
+                }
+                senhaReal = novaSenha;
+            }
+
+            // faz os asteriscos 
+            let asteriscos = "";
+            let y = 0;
+            while (y < senhaReal.length) {
+                asteriscos += "*";
+                y++;
+            }
+            senha.value = asteriscos;
+        }
+
+        function entrar() {
+            let emailUser = email.value;
+            let senhaUser = senhaReal;
+
+            let loginValido = 1;
+
+            // validação de campos vazios
+            if (emailUser == "") {
+                loginValido = 0;
+            }
+            if (senhaUser == "") {
+                loginValido = 0;
+            }
+
+            if (loginValido == 0) {
+                alert("Por favor, preencha todos os campos!");
+            } else {
+                // censura a senha no console 
+                let senhaCensurada = "";
+                let i = 0;
+                while (i < senhaUser.length) {
+                    senhaCensurada += "*";
+                    i++;
+                }
+
+                console.log("E-mail:", emailUser);
+                console.log("Senha:", senhaCensurada);
+
+                alert("Login efetuado com sucesso!");
+            }
+        }
 
     </script>
