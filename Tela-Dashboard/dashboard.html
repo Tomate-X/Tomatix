@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomatix - Visualizador</title>
+    <title>Tomatix - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
+                        <!--Navbar-->
+<div class="home" id="empresa">
+    <div class="navbar">
+            <div class="btns-nav">
+                <a href="../Tela-Login/login.html"><button class="btn-branco">Estufas</button></a>
+                <a href="../Tela-Cadastro/cadastro.html"><button class="btn">Histórico</button></a>
+            </div>
+        </div>
+    </div>
+                                <!--Contato-->
+    <div class="contato-secao" id="contato">
+    <div class="contato-info">
+        <span class="subtitulo-contato">Contato</span>
+        <h2>Veja a luz da sua plantação de uma nova maneira</h2>
+        <p>Quer entender melhor as condições de luminosidade da sua estufa? Entre em contato conosco e descubra como a TOMATIX pode ajudar sua produção.</p>
+        
+<div class="contato-formulario">
+        <div class="campo-grupo">
+            <label for="ipt_nomeContato">Nome:</label>
+            <input type="text" id="ipt_nomeContato" placeholder="Digite seu nome aqui">
+        </div>
+
+        <div class="campo-grupo">
+            <label for="ipt_emailContato">Email:</label>
+            <input type="text" id="ipt_emailContato" placeholder="Digite seu email aqui">
+        </div>
+
+        <div class="campo-grupo">
+            <label for="ipt_telefoneContato">Telefone:</label>
+            <input type="text" id="ipt_telefoneContato" placeholder="Digite seu telefone/WhatsApp">
+        </div>
+
+        <div class="campo-grupo">
+            <label for="ipt_mensagemContato">Mensagem:</label>
+            <textarea id="ipt_mensagemContato" placeholder="Fale um pouco sobre o que você precisa"></textarea>
+</div>
+
+        <button class="btn-enviar" onclick="conhecerSolução()">Quero conhecer a solução</button>
+    </div>
+</div>
+
 </body>
+
 </html>
+
+
+          
