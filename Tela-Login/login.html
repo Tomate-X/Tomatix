@@ -32,7 +32,7 @@
                     <img src="./assets/logo-branco.png" class="logo-branco">
                 </div>
             </div>
-
+                                            <!--Campos de login-->
             <div class="login-content">
                
                 <div class="div-cadastro" id="divLogin">
@@ -55,7 +55,7 @@
                    
                         <div class="btns-linha">
                     <div class="btns-login">
-                        <button onclick="entrar()" class="btn">Login</button>
+                        <a href="../Tela-Dashboard/dashboard.html"style="flex: 1; text-decoration: none;"><button onclick="entrar()" class="btn">Login</button></a>
                         <a href="../Tela-Cadastro/cadastro.html" style="flex: 1; text-decoration: none;"><button onclick="" class="btn-branco">Criar Conta</button></a>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
                 console.log("E-mail:", emailUser);
                 console.log("Senha:", senhaCensurada);
 
-                alert("Login efetuado com sucesso!");
+                alert("Login efetuado com sucesso!"); // o <a> href faz ele ir direto pra página se tudo passar até aqui
             }
         }
 
