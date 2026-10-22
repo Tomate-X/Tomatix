@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0; /* Zera o padding e margin padrão dos elementos */
+    box-sizing: border-box; 
+    /* Mantém o width/height do elemento quando é adicionado padding ou border */
+    scroll-behavior: smooth; /* Deixa o scrool suave */
+}
+a{
+    text-decoration: none;
+}
+
+:root {
+    --cor01-: #005223;
+    --cor02-: #d11313;
+}
+
+html {
+    font-family: "Space Grotesk", sans-serif;
+    color: #17241B;
+}
+
+/* Navbar */
+.logo-nav {
+    width: 40%;
+}
+
+.navbar {
+    background-color: #005223;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 30px;
+    width: 100%;
+}
+
+.nav-items {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 15px;
+}
+
+/* Pintar os links da nav de preto */
+.nav-items a {
+    color: #000000;         
+    text-decoration: none;
+}
+
+.btns-nav {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+    margin-left: auto;
+    border-radius: 20px;
+}
+
+
+/* Botão de Login/Criar conta */
+.btns-login {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.btns-login button {
+    width: 100%;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Botões globais */
+.btn {
+    padding: 10px 20px;
+    background-color: #01662d;
+    color: #ffffff;
+    border: 1px solid var(--cor01-);
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 18px;
+    transition: ease 0.2s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: white;
+    color: var(--cor01-);
+    border: 0.5px solid #ffffff77;
+}
+
+.btn-branco {
+    padding: 10px 20px;
+    background-color: #00ab56;
+    color: #ffffff;
+    border: 1px solid var(--cor01-);
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 18px;
+    transition: ease 0.2s;
+    cursor: pointer;
+}
+
+.btn-branco:hover {
+    color: aliceblue;
+    background-color: var(--cor01-);
+    border: 0.5px solid #ffffff77;
+}
+
+.estufas{
+    padding: 30px;
+   
+}
+.card-estufa{
+    border: solid black 1px;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.linha1{
+    display: flex;
+    gap: 10px;
+}
+
+.linha1 div{
+    flex: 1
+}
