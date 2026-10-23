@@ -144,11 +144,12 @@
                 alert("Por favor, preencha todos os campos!");
             }
 
-            else if (emailUser != "fernandobrandao@email.com") {
+            else if (emailUser != "fernando.brandao@email.com" && emailUser != "julia.araripe@email.com" && emailUser != "marcos.antonio@email.com") {
                 emailValido = 0;
                  alert("Usuário inválido ou inexistente!");
             }
-            else if (emailValido == 1 && senhaUser != "olhaarotina!") {
+
+            else if (emailValido == 1 && (senhaUser != "olhaarotina!" && senhaUser != "12345678" && "plantacao_morangos!")) {
                 senhaValido = 0;
                  alert("Senha incorreta ou inválida!");
             }

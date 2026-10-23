@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomatix - Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -14,46 +15,85 @@
 <div class="home" id="empresa">
     <div class="navbar">
             <div class="btns-nav">
-                <a href="../Tela-Login/login.html"><button class="btn-branco">Estufas</button></a>
-                <a href="../Tela-Cadastro/cadastro.html"><button class="btn">Histórico</button></a>
+                <a href="#"><button class="btn-branco">Estufas</button></a>
+                <a href="#"><button class="btn">Histórico</button></a>
             </div>
         </div>
     </div>
-                                <!--Contato-->
-    <div class="contato-secao" id="contato">
-    <div class="contato-info">
-        <span class="subtitulo-contato">Contato</span>
-        <h2>Veja a luz da sua plantação de uma nova maneira</h2>
-        <p>Quer entender melhor as condições de luminosidade da sua estufa? Entre em contato conosco e descubra como a TOMATIX pode ajudar sua produção.</p>
-        
-<div class="contato-formulario">
-        <div class="campo-grupo">
-            <label for="ipt_nomeContato">Nome:</label>
-            <input type="text" id="ipt_nomeContato" placeholder="Digite seu nome aqui">
+                          <!--Gráfico-->
+    <section class="grafico">
+      <div class="menu-lateral">
+        <select name="fases-tomate" id="fases-tomate">
+          <option value="">Muda</option>
+          <option value="">Vegetativa</option>
+          <option value="">Reprodutiva</option>
+        </select>
+
+      </div>
+        <div class="grafico-container">
+          <!--KPI Leitura atual-->
+          <div class="kpis leitura">
+            <div>
+              <p class="kpi-title">LEITURA ATUAL</p>
+              <p class="ppfd-atual">70</p>
+              <p class="kpi-title">PPFD</p>
+            </div>
+              <span class="situacao">ADEQUADO</span>
+          </div>
+
+           <!--KPI Métricas-->
+          <div class="metricas">
+            <div class="kpis adequado">
+              <p>>255 & <347 </p>
+            </div>
+            <div class="kpis abaixo">
+              <p><255</p>
+            </div>
+            <div class="kpis elevado">
+              <p>>347</p>
+            </div>
+          </div>
+          <!--Gráfico da leitura-->
+            <canvas id="myChart"></canvas>
         </div>
-
-        <div class="campo-grupo">
-            <label for="ipt_emailContato">Email:</label>
-            <input type="text" id="ipt_emailContato" placeholder="Digite seu email aqui">
-        </div>
-
-        <div class="campo-grupo">
-            <label for="ipt_telefoneContato">Telefone:</label>
-            <input type="text" id="ipt_telefoneContato" placeholder="Digite seu telefone/WhatsApp">
-        </div>
-
-        <div class="campo-grupo">
-            <label for="ipt_mensagemContato">Mensagem:</label>
-            <textarea id="ipt_mensagemContato" placeholder="Fale um pouco sobre o que você precisa"></textarea>
-</div>
-
-        <button class="btn-enviar" onclick="conhecerSolução()">Quero conhecer a solução</button>
-    </div>
-</div>
+    </section>
+   
 
 </body>
 
 </html>
+<script>
+  const ctx = document.getElementById('myChart');
 
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Dia:5', 'Dia:10', 'Dia:15', 'Dia:20', 'Dia:25', 'Dia:30'],
+      datasets: [{
+        label: 'ppfd',
+        data: [240, 280, 320, 358, 337, 302], 
+        borderColor: 'dark grey',
+        backgroundColor:'yellow',
+        borderWidth: 1
+      },
+      {
+        label: 'ppfd (Ideal)',
+        data: [301, 301, 301, 301, 301, 301], 
+        borderColor: 'green', // Cor da linha 
+        borderWidth: 2,
+        borderDash: [5, 5], // Cria um efeito de linha tracejada
+        pointRadius: 0, // Remove os pontos 
+      }
+    ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
 
           
