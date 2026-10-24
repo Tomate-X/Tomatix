@@ -7,6 +7,7 @@
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 :root {
@@ -15,6 +16,9 @@ a {
     --verde-adequado: #2e7d32;
     --amarelo-alerta: #f9a825;
     --vermelho-critico: #d11313;
+    --sidebar-home: #08471f;
+    --sidebar-ativo: #00a651;
+    --fundo-conteudo: #f3f4f2;
 }
 
 html {
@@ -22,115 +26,259 @@ html {
     color: #17241B;
 }
 
-.navbar {
-    background-color: #005223;
+body {
+    background-color: var(--fundo-conteudo);
+}
+
+.layout {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    width: 100%;
+    min-height: 100vh;
 }
 
-.btns-nav {
-    display: flex;
-    gap: 10px;
-    margin-left: auto;
-}
-
-.btn,
-.btn-branco {
-    padding: 10px 20px;
-    border-radius: 18px;
-    font-weight: 700;
-    font-size: 12px;
-    border: 1px solid var(--cor01-);
-    cursor: pointer;
-    transition: ease 0.2s;
-}
-
-.btn {
-    background-color: #01662d;
-    color: #fff;
-}
-
-.btn:hover {
-    background-color: #fff;
-    color: var(--cor01-);
-    border: 0.5px solid #ffffff77;
-}
-
-.btn-branco {
-    background-color: #00ab56;
-    color: #fff;
-}
-
-.btn-branco:hover {
+.sidebar {
+    width: 23%;
+    min-width: 240px;
+    max-width: 320px;
+    min-height: 100vh;
     background-color: var(--cor01-);
-    color: aliceblue;
-    border: 0.5px solid #ffffff77;
+    color: #ffffff;
+    padding: 28px 18px 24px;
+    display: flex;
+    flex-direction: column;
 }
 
-.dashboard {
-    padding: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+.logo {
+    width: 75%;
+    max-width: 230px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 36px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item--home {
+    background-color: var(--sidebar-home);
+}
+
+.menu-item--home:hover {
+    background-color: var(--sidebar-home);
+}
+
+.menu-item--ativo {
+    background-color: var(--sidebar-ativo);
+}
+
+.menu-item--ativo:hover {
+    background-color: var(--sidebar-ativo);
+}
+
+.menu-icone {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.usuario {
+    margin-top: auto;
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: #74cc82;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.usuario-texto {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.usuario-saudacao {
+    color: #d8e8dc;
+}
+
+.usuario-nome {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.conteudo {
+    flex: 1;
+    padding: 34px 44px;
+}
+
+.saudacao {
+    font-size: 12px;
+    color: #5f6b63;
+    margin-bottom: 6px;
+}
+
+.titulo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #143a22;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    max-width: 540px;
+    font-size: 13px;
+    color: #6b756e;
+    margin-bottom: 30px;
 }
 
 .marcadores {
     display: flex;
-    gap: 24px;
-    margin-bottom: 24px;
     flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 30px;
 }
 
 .marcador {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #17241B;
+    padding: 10px 24px;
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
 }
 
-.marcador-indicador {
-    width: 16px;
-    height: 16px;
-    border: 2px solid #17241B;
-    border-radius: 4px;
+.marcador--adequado {
+    background-color: var(--verde-adequado);
 }
 
-.marcador--adequado .marcador-indicador { background-color: var(--verde-adequado); border-color: var(--verde-adequado); }
-.marcador--alerta .marcador-indicador { background-color: var(--amarelo-alerta); border-color: var(--amarelo-alerta); }
-.marcador--critico .marcador-indicador { background-color: var(--vermelho-critico); border-color: var(--vermelho-critico); }
+.marcador--critico {
+    background-color: var(--vermelho-critico);
+}
+
+.marcador--alerta {
+    background-color: var(--amarelo-alerta);
+}
 
 .retangulos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 900px;
 }
 
 .retangulo {
-    border: 1px solid #000;
-    border-radius: 15px;
-    padding: 20px;
-    min-height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    min-height: 130px;
+    border: 0;
+    border-radius: 10px;
 }
 
-.retangulo--adequado { background-color: var(--verde-adequado); }
-.retangulo--alerta { background-color: var(--amarelo-alerta); }
-.retangulo--critico { background-color: var(--vermelho-critico); }
+.retangulo::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 12px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    opacity: 0.9;
+}
+
+.retangulo--adequado {
+    background-color: var(--verde-adequado);
+}
+
+.retangulo--alerta {
+    background-color: var(--amarelo-alerta);
+}
+
+.retangulo--critico {
+    background-color: var(--vermelho-critico);
+}
 
 @media (max-width: 900px) {
-    .retangulos {
-        grid-template-columns: repeat(2, 1fr);
+    .sidebar {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .conteudo {
+        padding: 28px;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 720px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 18px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .logo {
+        width: 110px;
+    }
+
+    .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    .menu-item {
+        padding: 8px 12px;
+    }
+
+    .usuario {
+        margin-top: 0;
+        margin-left: auto;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 520px) {
     .retangulos {
         grid-template-columns: 1fr;
+    }
+
+    .usuario {
+        margin-left: 0;
     }
 }

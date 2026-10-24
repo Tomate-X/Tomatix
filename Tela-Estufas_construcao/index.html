@@ -3,44 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Tomatix</title>
+    <title>Estufas - Tomatix</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-        <div class="btns-nav">
-            <a href="../Tela-Login/login.html"><button class="btn-branco">Estufas</button></a>
-            <a href="../Tela-Cadastro/cadastro.html"><button class="btn">Histórico</button></a>
-        </div>
+    <div class="layout">
+        <aside class="sidebar">
+            <img class="logo" src="assets/logo-tomatix.svg" alt="Tomatix">
+
+            <nav class="menu" aria-label="Menu principal">
+                <a class="menu-item menu-item--home" href="#">
+                    <img class="menu-icone" src="assets/icone-sol.png" alt="">
+                    <span>Home</span>
+                </a>
+                <a class="menu-item menu-item--ativo" href="#" aria-current="page">
+                    <img class="menu-icone" src="assets/icone-planta.png" alt="">
+                    <span>Estufas</span>
+                </a>
+                <a class="menu-item" href="#">
+                    <img class="menu-icone" src="assets/icone-ajuda.png" alt="">
+                    <span>Ajuda</span>
+                </a>
+            </nav>
+
+            <div class="usuario">
+                <span class="avatar" aria-hidden="true">AS</span>
+                <span class="usuario-texto">
+                    <span class="usuario-saudacao">Olá,</span>
+                    <strong class="usuario-nome">Antônio Silva</strong>
+                </span>
+            </div>
+        </aside>
+
+        <main class="conteudo">
+            <p class="saudacao">Olá, Antônio Silva</p>
+            <h1 class="titulo">Visão Geral das Estufas</h1>
+            <p class="subtitulo">Acompanhe a condição luminosa das estufas vinculadas a esta unidade.</p>
+
+            <section class="marcadores" aria-label="Legenda de status">
+                <div class="marcador marcador--adequado">Adequado</div>
+                <div class="marcador marcador--critico">Estado Crítico</div>
+                <div class="marcador marcador--alerta">Em Alerta</div>
+            </section>
+
+            <section class="retangulos" aria-label="Estufas">
+                <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa adequada"></button>
+                <button class="retangulo retangulo--alerta" type="button" aria-label="Estufa em alerta"></button>
+                <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa adequada"></button>
+                <button class="retangulo retangulo--critico" type="button" aria-label="Estufa em estado crítico"></button>
+                <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa adequada"></button>
+                <button class="retangulo retangulo--alerta" type="button" aria-label="Estufa em alerta"></button>
+            </section>
+        </main>
     </div>
-
-    <main class="dashboard">
-        <section class="marcadores" aria-label="Legenda de status">
-            <div class="marcador marcador--adequado">
-                <span class="marcador-indicador"></span>
-                <span class="marcador-texto">Adequado</span>
-            </div>
-            <div class="marcador marcador--alerta">
-                <span class="marcador-indicador"></span>
-                <span class="marcador-texto">Em Alerta</span>
-            </div>
-            <div class="marcador marcador--critico">
-                <span class="marcador-indicador"></span>
-                <span class="marcador-texto">Estado Crítico</span>
-            </div>
-        </section>
-
-        <section class="retangulos" aria-label="Estufas">
-            <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa 1"></button>
-            <button class="retangulo retangulo--alerta" type="button" aria-label="Estufa 2"></button>
-            <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa 3"></button>
-            <button class="retangulo retangulo--critico" type="button" aria-label="Estufa 4"></button>
-            <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa 5"></button>
-            <button class="retangulo retangulo--alerta" type="button" aria-label="Estufa 6"></button>
-        </section>
-    </main>
 </body>
 </html>
