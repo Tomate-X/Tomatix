@@ -5,11 +5,6 @@
     scroll-behavior: smooth;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 :root {
     --cor01-: #005223;
     --cor02-: #d11313;
@@ -63,30 +58,39 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    width: 100%;
     padding: 10px 14px;
+    border: 1px solid var(--cor01-);
     border-radius: 8px;
+    background-color: transparent;
+    color: #ffffff;
+    font: inherit;
     font-size: 14px;
     font-weight: 500;
-    transition: background-color 0.2s ease;
+    text-align: left;
+    cursor: pointer;
+    transition: ease 0.2s;
 }
 
 .menu-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
+    color: var(--cor01-);
+}
+
+.menu-item:hover .menu-icone {
+    filter: none;
+}
+
+.menu-item:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
 }
 
 .menu-item--home {
     background-color: var(--sidebar-home);
 }
 
-.menu-item--home:hover {
-    background-color: var(--sidebar-home);
-}
-
 .menu-item--ativo {
-    background-color: var(--sidebar-ativo);
-}
-
-.menu-item--ativo:hover {
     background-color: var(--sidebar-ativo);
 }
 
@@ -200,6 +204,24 @@ body {
     min-height: 130px;
     border: 0;
     border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.retangulo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
+    filter: brightness(1.04);
+}
+
+.retangulo:active {
+    transform: translateY(-1px) scale(0.99);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.16);
+}
+
+.retangulo:focus-visible {
+    outline: 3px solid #143a22;
+    outline-offset: 3px;
 }
 
 .retangulo::after {
