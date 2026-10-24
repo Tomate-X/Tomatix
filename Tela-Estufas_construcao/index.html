@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Tomatix</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="btns-nav">
+            <a href="../Tela-Login/login.html"><button class="btn-branco">Estufas</button></a>
+            <a href="../Tela-Cadastro/cadastro.html"><button class="btn">Histórico</button></a>
+        </div>
+    </div>
+
+    <main class="dashboard">
+        <section class="marcadores" aria-label="Legenda de status">
+            <div class="marcador marcador--adequado">
+                <span class="marcador-indicador"></span>
+                <span class="marcador-texto">Adequado</span>
+            </div>
+            <div class="marcador marcador--alerta">
+                <span class="marcador-indicador"></span>
+                <span class="marcador-texto">Em Alerta</span>
+            </div>
+            <div class="marcador marcador--critico">
+                <span class="marcador-indicador"></span>
+                <span class="marcador-texto">Estado Crítico</span>
+            </div>
+        </section>
+
+        <section class="retangulos" aria-label="Estufas">
+            <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa 1"></button>
+            <button class="retangulo retangulo--alerta" type="button" aria-label="Estufa 2"></button>
+            <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa 3"></button>
+            <button class="retangulo retangulo--critico" type="button" aria-label="Estufa 4"></button>
+            <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa 5"></button>
+            <button class="retangulo retangulo--alerta" type="button" aria-label="Estufa 6"></button>
+        </section>
+    </main>
+</body>
+</html>
