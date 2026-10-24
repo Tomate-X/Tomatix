@@ -157,35 +157,68 @@
 
 </html>
 
-<script>
+<script> // validações nos campos de input 
     function conhecerSolução() {
         let nome = ipt_nomeContato.value
         let email = ipt_emailContato.value
         let telefone = ipt_telefoneContato.value
         let mensagem = ipt_mensagemContato.value
 
+        // valores do email
+        let countArroba = 0;
+        let pontoPosArroba = false;
+        let posicaoArroba = email.indexOf('@');
+
+
+        for(let i = 0; i < email.length; i++){ // contador i que vai ver cada caractere do email informado
+            if(email[i] == '@'){
+                countArroba++
+            }
+        
+         if(countArroba == 1 && i > posicaoArroba && email[i] == '.' && i != posicaoArroba + 1){ 
+                pontoPosArroba = true;
+            }
+        }
+
+        // validações dos campos vazios
         if (nome == "") {
             alert("Por favor, insira um nome")
         }
         else if (email == "") {
             alert('Por favor, insira um email')
         }
+        
         else if (telefone == "") {
             alert('Por favor, insira um número de telefone')
         }
         else if (mensagem == "") {
             alert('Por favor, insira uma mensagem')
         }
-        else if (!email.includes('@')) {
-            alert('O email informado não é válido, tente novamente')
-        }
+
         else if (telefone.length != 11) {
             alert('O telefone deve ter 11 dígitos, sem espaçamento')
+        }
+
+        else if (posicaoArroba == -1){ // quando não tem '@'
+        alert(`O email informmado não possui arroba`)
+        }
+        else if (posicaoArroba == 0){
+            alert(`O email não deve começar com arroba`)
+        }
+        else if (countArroba > 1){
+            alert(`O email deve ter apenas um arroba`)
+        }
+        else if (!pontoPosArroba){
+            alert(`O email deve ter '.' após o '@', e não pode estar ao lado '@.'`)
+        }
+        else if (email.endsWith('.')){
+            alert(`O email não deve terminar com '.'`)
         }
 
         else {
             alert(`Sua mensagem foi enviada com sucesso. Agradecemos o contato`)
         }
 
+       
     }
 </script>
