@@ -4,47 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomatix - Dashboard</title>
+    <title>Tomatix - Dashboard Alertas</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-                        <!--Navbar-->
-<div class="home" id="empresa">
-    <div class="navbar">
-            <div class="btns-nav">
-                <a href="#"><button class="btn-branco">Estufas</button></a>
-                <a href="#"><button class="btn">Histórico</button></a>
-            </div>
-        </div>
-    </div>
+<div class="main">
                           <!--Gráfico-->
-    <section class="grafico">
+    <section class="dashboard">
       <div class="menu-lateral">
-        <select name="fases-tomate" id="fases-tomate">
-          <option value="">Muda</option>
-          <option value="">Vegetativa</option>
-          <option value="">Reprodutiva</option>
-        </select>
+        
+        <div>
+          <div class="logo-div">
+            <img src="../Site-Institucional/assets/Logo Branca Tomatix.svg" alt="" class="logo">
+          </div>
+          
+          <div class="btns-container">
+            <a class="menu-buttons">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house preview-icon"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              Home</a>
+            <a class="menu-buttons">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building preview-icon"><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M12 6h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/><path d="M8 6h.01"/><path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
+              Estufas</a>
+            <a class="menu-buttons"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock preview-icon"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Registro</a>
+          </div>
+        </div>
+      
+      
+      <div class="user">
+        <div>FB</div>
+        <p>Olá,<br> <span>Fernando Brandão</span></p>
+      </div>
 
       </div>
-        <div class="grafico-container">
-          <!--KPI Leitura atual-->
-          <div class="kpis leitura">
+
+        <div class="dashboard-content">
+          <div class="title-fases">
+            <h1>Registro de Alertas</h1>
+            <div class="inputs-container">
+            
+
+            
+            
+
+            <div class="fases-container">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf preview-icon "><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
+            <select name="fasesTomate" id="fasesTomate" onchange="selecionarFase()">
+              <option value="muda">Muda</option>
+              <option value="vegetativa">Vegetativa</option>
+              <option value="reprodutiva">Reprodutiva</option>
+            </select>
+            </div>
+          </div>
+          </div>
+            
+           
+            <div class="grafico-container">
+            <!--KPI Leitura atual-->
+            <div class="kpis leitura">
             <div>
               <p class="kpi-title">LEITURA ATUAL</p>
               <p class="ppfd-atual">70</p>
               <p class="kpi-title">PPFD</p>
             </div>
-              <span class="situacao">ADEQUADO</span>
+              
           </div>
 
            <!--KPI Métricas-->
           <div class="metricas">
             <div class="kpis adequado">
               <p>>255 & <347 </p>
+            </div>
+            <div class="kpis adequado">
+              <p>>255 & <347 </p>
+            </div>  
+            <div class="kpis abaixo">
+              <p><255</p>
             </div>
             <div class="kpis abaixo">
               <p><255</p>
@@ -53,40 +91,56 @@
               <p>>347</p>
             </div>
           </div>
-          <!--Gráfico da leitura-->
-            <canvas id="myChart"></canvas>
+            
+            <!--Gráfico da leitura-->
+            <div class="res">
+              <canvas id="myChart"></canvas>
+            </div>
+
+          </div>
         </div>
+      
+        
     </section>
-   
+</div>
 
 </body>
 
 </html>
 <script>
-  const ctx = document.getElementById('myChart');
+const ctx = document.getElementById('myChart');
+// Quantidade de alertas de cuidado
+const vegetativaAlertasCuidado = [4, 10, 2, 16, 20, 13]
+const mudasAlertasCuidado = [7, 3, 12, 8, 15, 5];
+const reprodutivaAlertasCuidado = [18, 9, 23, 14, 6, 21];
 
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['Dia:5', 'Dia:10', 'Dia:15', 'Dia:20', 'Dia:25', 'Dia:30'],
-      datasets: [{
-        label: 'ppfd',
-        data: [240, 280, 320, 358, 337, 302], 
-        borderColor: 'dark grey',
-        backgroundColor:'yellow',
-        borderWidth: 1
+// Quantidade de alertas criticos
+const vegetativaAlertasCriticos = [21, 14, 8, 25, 17, 10];
+const mudasAlertasCriticos = [16, 23, 11, 19, 7, 24];
+const reprodutivaAlertasCriticos = [25, 18, 12, 20, 9, 15];
+
+let grafico1 = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+        datasets: [
+          {
+            label: 'Alertas abaixo do normal',
+            data: [12, 18, 9, 15, 21, 7, 5],
+            backgroundColor: 'rgba(226, 181, 44, 1)',
+            borderColor: 'rgba(226, 181, 44, 1)',
+            borderWidth: 1
+          },
+          {
+            label: 'Alertas acima do normal',
+            data: [8, 14, 22, 11, 17, 10, 6],
+            backgroundColor: 'rgba(200, 74, 62, 1)',
+            borderColor: 'rgba(200, 74, 62, 1)',
+            borderWidth: 1
+          }
+        ]
       },
-      {
-        label: 'ppfd (Ideal)',
-        data: [301, 301, 301, 301, 301, 301], 
-        borderColor: 'green', // Cor da linha 
-        borderWidth: 2,
-        borderDash: [5, 5], // Cria um efeito de linha tracejada
-        pointRadius: 0, // Remove os pontos 
-      }
-    ]
-    },
-    options: {
+       options: {
       scales: {
         y: {
           beginAtZero: true
@@ -94,6 +148,27 @@
       }
     }
   });
-</script>
 
-          
+function selecionarFase(){
+  const fase = fasesTomate.value
+  console.log(fase)
+
+  if(fase =='muda'){
+    grafico1.data.datasets[0].data = mudasAlertasCuidado
+    grafico1.data.datasets[1].data = mudasAlertasCriticos
+    grafico1.update()
+  }
+  if(fase == 'vegetativa'){
+    grafico1.data.datasets[0].data = vegetativaAlertasCuidado
+    grafico1.data.datasets[1].data = vegetativaAlertasCriticos
+    grafico1.update()
+  }
+  if(fase == 'reprodutiva'){
+    grafico1.data.datasets[0].data = reprodutivaAlertasCuidado
+    grafico1.data.datasets[1].data = reprodutivaAlertasCriticos
+    grafico1.update()
+    
+  }
+}
+
+</script>
