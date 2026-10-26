@@ -129,6 +129,45 @@
             let senhaValido = 1;
             let emailValido = 1;
 
+            // valores do email
+        let countArroba = 0;
+        let pontoPosArroba = false;
+        let posicaoArroba = emailUser.indexOf('@');
+
+
+        for(let i = 0; i < emailUser.length; i++){ // contador i que vai ver cada caractere do email informado
+            if(emailUser[i] == '@'){
+                countArroba++
+            }
+        
+         if(countArroba == 1 && i > posicaoArroba && emailUser[i] == '.' && i != posicaoArroba + 1){ 
+                pontoPosArroba = true;
+            }
+        }
+
+        // validações dos campos vazios
+        if (email == "") {
+            alert('Por favor, insira um email')
+        }
+
+        else if (posicaoArroba == -1){ // quando não tem '@'
+        alert(`O email informado não possui arroba`)
+        }
+        else if (posicaoArroba == 0){
+            alert(`O email não deve começar com arroba`)
+        }
+        else if (countArroba > 1){
+            alert(`O email deve ter apenas um arroba`)
+        }
+        else if (!pontoPosArroba){
+            alert(`O email deve ter '.' após o '@', e não pode estar ao lado '@.'`)
+        }
+        else if (emailUser.endsWith('.')){
+            alert(`O email não deve terminar com '.'`)
+        }
+
+        
+
             // validação de campos vazios
             if (emailUser == "") {
                 loginValido = 0;
@@ -142,6 +181,10 @@
 
             if (loginValido == 0 && emailValido == 0 && senhaValido == 0) {
                 alert("Por favor, preencha todos os campos!");
+            }
+
+            if (senhaUser == "") {
+            alert("Por favor, insira uma senha");
             }
 
             else if (emailUser != "fernando.brandao@email.com" && emailUser != "julia.araripe@email.com" && emailUser != "marcos.antonio@email.com") {
@@ -176,5 +219,6 @@
                 linkLogin.href = "../Tela-Dashboard/dashboard.html";
             }
         }
+    
 
     </script>
