@@ -30,7 +30,7 @@
             </nav>
 
             <div class="usuario">
-                <span class="avatar" aria-hidden="true">AS</span>
+                <span class="avatar" aria-hidden="true">FB</span>
                 <span class="usuario-texto">
                     <span class="usuario-saudacao">Olá,</span>
                     <strong class="usuario-nome">Fernando Brandão</strong>
@@ -50,14 +50,22 @@
             </section>
 
             <section class="retangulos" aria-label="Estufas">
-                <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa adequada"></button>
-                <button class="retangulo retangulo--alerta" type="button" aria-label="Estufa em alerta"></button>
-                <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa adequada"></button>
-                <button class="retangulo retangulo--critico" type="button" aria-label="Estufa em estado crítico"></button>
-                <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa adequada"></button>
-                <button class="retangulo retangulo--alerta" type="button" aria-label="Estufa em alerta"></button>
+                <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa adequada" id="estufa-01"></button>
+                <button class="retangulo retangulo--alerta" type="button" aria-label="Estufa em alerta" id="estufa-02"></button>
+                <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa adequada" id="estufa-03"></button>
+                <button class="retangulo retangulo--critico" type="button" aria-label="Estufa em estado crítico" id="estufa-04"></button>
+                <button class="retangulo retangulo--adequado" type="button" aria-label="Estufa adequada" id="estufa-05"></button>
+                <button class="retangulo retangulo--alerta" type="button" aria-label="Estufa em alerta" id="estufa-06"></button>
             </section>
         </main>
     </div>
+    <script>
+        document.getElementById("estufa-01").innerHTML = `<span class="retangulo-nome">Estufa 01</span>`;
+        document.getElementById("estufa-02").innerHTML = `<span class="retangulo-nome">Estufa 02</span>`;
+        document.getElementById("estufa-03").innerHTML = `<span class="retangulo-nome">Estufa 03</span>`;
+        document.getElementById("estufa-04").innerHTML = `<span class="retangulo-nome">Estufa 04</span>`;
+        document.getElementById("estufa-05").innerHTML = `<span class="retangulo-nome">Estufa 05</span>`;
+        document.getElementById("estufa-06").innerHTML = `<span class="retangulo-nome">Estufa 06</span>`;
+    </script>
 </body>
 </html>
