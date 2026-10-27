@@ -42,7 +42,7 @@
       </div>
 
         <div class="dashboard-content">
-          <div class="title-fases">
+          <div class="title-estufas">
             <h1>Registro de Alertas</h1>
             <div class="inputs-container">
             
@@ -50,9 +50,9 @@
             
             
 
-            <div class="fases-container">
+            <div class="estufas-container">
                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf preview-icon "><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
-            <select name="fasesTomate" id="fasesTomate" onchange="selecionarFase()">
+            <select name="estufasTomate" id="estufasTomate" onchange="selecionarestufas()">
               <option value="muda">Muda</option>
               <option value="vegetativa">Vegetativa</option>
               <option value="reprodutiva">Reprodutiva</option>
@@ -149,21 +149,21 @@ let grafico1 = new Chart(ctx, {
     }
   });
 
-function selecionarFase(){
-  const fase = fasesTomate.value
-  console.log(fase)
+function selecionarestufas(){
+  const estufas = estufasTomate.value
+  console.log(estufas)
 
-  if(fase =='muda'){
+  if(estufas =='muda'){
     grafico1.data.datasets[0].data = mudasAlertasCuidado
     grafico1.data.datasets[1].data = mudasAlertasCriticos
     grafico1.update()
   }
-  if(fase == 'vegetativa'){
+  if(estufas == 'vegetativa'){
     grafico1.data.datasets[0].data = vegetativaAlertasCuidado
     grafico1.data.datasets[1].data = vegetativaAlertasCriticos
     grafico1.update()
   }
-  if(fase == 'reprodutiva'){
+  if(estufas == 'reprodutiva'){
     grafico1.data.datasets[0].data = reprodutivaAlertasCuidado
     grafico1.data.datasets[1].data = reprodutivaAlertasCriticos
     grafico1.update()
