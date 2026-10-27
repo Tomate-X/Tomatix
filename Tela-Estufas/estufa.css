@@ -319,12 +319,22 @@ font-weight: 700;
     color: #ffffff;
 }
 
+.card-estufa a { /* pinta os links azuis para branco*/
+    text-decoration: none;
+    color: #ffffff;
+}
+
 .card-estufa3{
     border: solid #17241B 1px;
     border-radius: 15px;
     padding: 20px;
     width: 299.41px; /* é o tamanho exato dos cards 1 e 2 na tela*/
     background-color: #f9a825;
+    color: #ffffff;
+}
+
+.card-estufa3 a { /* pinta os links azuis para branco*/
+    text-decoration: none;
     color: #ffffff;
 }
 
