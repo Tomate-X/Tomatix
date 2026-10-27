@@ -43,7 +43,11 @@
 
         <div class="dashboard-content">
           <div class="title-estufas">
-            <h1>Registro de Alertas</h1>
+            <div style="display: flex; flex-direction: column;gap: 10px;">
+              <h1>Registro de Alertas da Estufa</h1>
+              <p style="font-weight:700; color: rgb(65, 65, 65);">Alertas disparados durante a semana</p>
+            </div>
+            
             <div class="inputs-container">
             <div class="estufas-container">
 
@@ -57,9 +61,10 @@
             <div class="estufas-container">
                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf preview-icon "><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
             <select name="estufasTomate" id="estufasTomate" onchange="selecionarestufa()">
-              <option value="muda">Estufa01</option>
-              <option value="vegetativa">Estufa02</option>
-              <option value="reprodutiva">Estufa03</option>
+              <option value="" disabled selected>Selecione uma estufa</option>
+              <option value="muda">Mudas</option>
+              <option value="vegetativa">Vegetativa</option>
+              <option value="reprodutiva">reprodutiva</option>
             </select>
             </div>
           </div>

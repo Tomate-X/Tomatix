@@ -19,7 +19,9 @@ html {
     color: #17241B;
 }
 
-
+.res{
+    height: 430px;
+}
 .navbar {
     background-color: #005223;
     display: flex;
@@ -110,13 +112,14 @@ html {
 .dashboard-content{
     padding: 40px;
     padding-bottom: 0px;
+    padding-top:20px;
     width: 100%;
 }
 
 /* Menu Lateral */
 .menu-lateral{
     background-color: #006b35;
-    width: 17%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -270,6 +273,7 @@ html {
 .critico{
     background-color: rgba(200, 74, 62, 1);
 }
+
 .metricas{
     display: flex;
     margin-bottom: 30px;
@@ -295,7 +299,7 @@ html {
 }
 .title-estufas{
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .kpi-container{
@@ -309,11 +313,15 @@ html {
     padding-top: 10px;
 }
 
-#myChart{
-    margin-top: 20px;
-}
 svg{
     color: green;
+}
+
+.critico p{
+    color: rgba(255, 255, 255, 0.842);
+}
+.cuidado p{
+    color: rgba(255, 255, 255, 0.842);
 }
 .select-menu{
     background-color: white;
@@ -321,4 +329,8 @@ svg{
     display: flex;
     padding: 5px 5px 5px 15px; /* atalho padding: topo, direita, inferior e esquerda*/
     border-radius: 15px;
+}
+
+.cuidado{
+    color: white;
 }
