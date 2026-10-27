@@ -182,12 +182,12 @@ html {
 .metricas div{
     flex: 1;
 }
-#fases{
+#estufas{
     padding: 10px;
     border-radius: 10px;
 
 }
-.fases-container{
+.estufas-container{
     box-shadow: 0px 7px 18px 0px rgba(70, 78, 73, 0.051);
     border: solid 1px rgb(194, 194, 194);
     display: flex;
@@ -307,6 +307,7 @@ html {
 .menu-lateral{
     background-color: #006b35;
     width: 17%;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -391,7 +392,7 @@ html {
     padding: 5px;
     border-radius: 5px;
 }
-#fasesTomate{
+#estufasTomate{
     padding: 10px 10px;
     border: none;
     font-weight: 800;
@@ -418,7 +419,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: red;
+    background-color: rgba(200, 74, 62, 1);
     color: white;
 }
 .kpis{
@@ -472,7 +473,7 @@ html {
     flex: 1;
 }
 
-.fases-container{
+.estufas-container{
     box-shadow: 0px 7px 18px 0px rgba(70, 78, 73, 0.051);
     border: solid 1px rgb(194, 194, 194);
     display: flex;
@@ -481,11 +482,11 @@ html {
     border-radius: 5px;
 }
 
-.title-fases{
+.title-estufas{
     display: flex;
     justify-content: space-between;
 }
-.title-fases{
+.title-estufas{
     margin-top: 20px;
     margin-bottom: 30px;
 }
