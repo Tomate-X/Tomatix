@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomatix - Leitura PPFD</title>
+    <title>Tomatix - Dashboard Alertas</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -12,95 +12,88 @@
 <body>
 
 <div class="main">
-                          <!--Gráfico-->
     <section class="dashboard">
+
+      <!-- Menu lateral -->
       <div class="menu-lateral">
-        
+
         <div>
           <div class="logo-div">
-            <img src="../Site-Institucional/assets/Logo Branca Tomatix.svg" alt="" class="logo">
+            <img src="../Site-Institucional/assets/Logo Branca Tomatix.svg" alt="Tomatix" class="logo">
           </div>
-          
+
+          <div class="seletor-estufa">
+            <div class="fases-container">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
+              <select name="fasesTomate" id="fasesTomate" onchange="selecionarFase()">
+                <option value="muda">Estufa de Mudas</option>
+                <option value="vegetativa">Estufa Vegetativa</option>
+                <option value="reprodutiva">Estufa Reprodutiva</option>
+              </select>
+            </div>
+          </div>
+
           <div class="btns-container">
             <a class="menu-buttons">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house preview-icon"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
               Home</a>
             <a class="menu-buttons">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building preview-icon"><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M12 6h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/><path d="M8 6h.01"/><path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
-              Estufas</a>
-            <a class="menu-buttons"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock preview-icon"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               Registro</a>
+            <a class="menu-buttons ativo">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building"><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M12 6h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/><path d="M8 6h.01"/><path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
+              Estufas</a>
           </div>
         </div>
-      
-      
-      <div class="user">
-        <div>FB</div>
-        <p>Olá,<br> <span>Fernando Brandão</span></p>
-      </div>
 
       </div>
 
-        <div class="dashboard-content">
-          <div class="title-estufas">
-            <h1>Leitura de Luminosidade</h1>
-            <div class="inputs-container">
-            
+      <!-- Conteúdo principal -->
+      <div class="dashboard-content">
 
-            
-            
+        <!-- Leitura atual (a cor muda pelo JS) -->
+        <div class="leitura-atual faixa-alerta" id="cardLeitura">
+          <p class="kpi-title">Leitura atual</p>
+          <p class="leitura-valor" id="leituraValor">70,1</p>
+          <p class="kpi-title">PPFD</p>
+        </div>
 
-            <div class="estufas-container">
-               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf preview-icon "><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
-            <select name="estufasTomate" id="estufasTomate" onchange="selecionarestufas()">
-              <option value="muda">Estufa01</option>
-              <option value="vegetativa">Estufa02</option>
-              <option value="reprodutiva">Estufa03</option>
-            </select>
-            </div>
+        <!-- Faixas de PPFD (textos preenchidos pelo JS) -->
+        <div class="faixas">
+          <div class="faixa faixa-critico">
+            <p class="faixa-nome">Crítico abaixo</p>
+            <p class="faixa-valor" id="faixa1"></p>
+            <p class="faixa-nome">PPFD</p>
           </div>
+          <div class="faixa faixa-alerta">
+            <p class="faixa-nome">Alerta abaixo</p>
+            <p class="faixa-valor" id="faixa2"></p>
+            <p class="faixa-nome">PPFD</p>
           </div>
-            
-           
-            <div class="grafico-container">
-            <!--KPI Leitura atual-->
-            <div class="kpis leitura">
-            <div>
-              <p class="kpi-title">LEITURA ATUAL</p>
-              <p class="ppfd-atual">70</p>
-              <p class="kpi-title">PPFD</p>
-            </div>
-              
+          <div class="faixa faixa-adequado">
+            <p class="faixa-nome">Adequado</p>
+            <p class="faixa-valor" id="faixa3"></p>
+            <p class="faixa-nome">PPFD</p>
           </div>
-
-           <!--KPI Métricas-->
-          <div class="metricas">
-            <div class="kpis adequado">
-              <p>>255 & <347 </p>
-            </div>
-            <div class="kpis adequado">
-              <p>>255 & <347 </p>
-            </div>  
-            <div class="kpis abaixo">
-              <p><255</p>
-            </div>
-            <div class="kpis abaixo">
-              <p><255</p>
-            </div>
-            <div class="kpis elevado">
-              <p>>347</p>
-            </div>
+          <div class="faixa faixa-alerta">
+            <p class="faixa-nome">Alerta elevado</p>
+            <p class="faixa-valor" id="faixa4"></p>
+            <p class="faixa-nome">PPFD</p>
           </div>
-            
-            <!--Gráfico da leitura-->
-            <div class="res">
-              <canvas id="myChart"></canvas>
-            </div>
-
+          <div class="faixa faixa-critico">
+            <p class="faixa-nome">Crítico elevado</p>
+            <p class="faixa-valor" id="faixa5"></p>
+            <p class="faixa-nome">PPFD</p>
           </div>
         </div>
-      
-        
+
+        <!-- Gráfico da leitura -->
+        <div class="res">
+          <canvas id="myChart"></canvas>
+        </div>
+
+      </div>
+
     </section>
 </div>
 
@@ -109,66 +102,130 @@
 </html>
 <script>
 const ctx = document.getElementById('myChart');
-// Quantidade de alertas de cuidado
-const vegetativaAlertasCuidado = [4, 10, 2, 16, 20, 13]
-const mudasAlertasCuidado = [7, 3, 12, 8, 15, 5];
-const reprodutivaAlertasCuidado = [18, 9, 23, 14, 6, 21];
 
-// Quantidade de alertas criticos
-const vegetativaAlertasCriticos = [21, 14, 8, 25, 17, 10];
-const mudasAlertasCriticos = [16, 23, 11, 19, 7, 24];
-const reprodutivaAlertasCriticos = [25, 18, 12, 20, 9, 15];
+// Leituras de PPFD ao longo do dia (sensor)
+const leiturasDia = [75, 80, 85, 70, 65, 60, 75, 85, 90, 95, 80, 75, 70, 72, 80, 88, 82, 78, 74, 80, 85, 90, 75, 70];
+
+// Leitura atual do sensor (troque pelo valor vindo do Arduino/API)
+const leituraAtual = 70.1;
+const leituraTexto = "70,1";
 
 let grafico1 = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+        labels: ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
         datasets: [
           {
-            label: 'Alertas abaixo do normal',
-            data: [12, 18, 9, 15, 21, 7, 5],
-            backgroundColor: 'rgba(226, 181, 44, 1)',
-            borderColor: 'rgba(226, 181, 44, 1)',
-            borderWidth: 1
+            label: 'Leitura de PPFD',
+            data: leiturasDia,
+            borderColor: 'rgba(0, 128, 0, 1)',
+            backgroundColor: 'rgba(0, 128, 0, 1)',
+            borderWidth: 2
           },
           {
-            label: 'Alertas acima do normal',
-            data: [8, 14, 22, 11, 17, 10, 6],
-            backgroundColor: 'rgba(200, 74, 62, 1)',
-            borderColor: 'rgba(200, 74, 62, 1)',
-            borderWidth: 1
+            label: 'Limite superior',
+            data: [],
+            borderColor: 'rgba(0, 0, 255, 1)',
+            backgroundColor: 'rgba(0, 0, 255, 1)',
+            borderWidth: 2
+          },
+          {
+            label: 'Limite inferior',
+            data: [],
+            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 2
           }
         ]
       },
-       options: {
-      scales: {
-        y: {
-          beginAtZero: true
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              minRotation: 45,
+              maxRotation: 45
+            }
+          },
+          y: {
+            beginAtZero: true,
+            max: 120
+          }
         }
       }
-    }
   });
 
-function selecionarestufas(){
-  const estufas = estufasTomate.value
-  console.log(estufas)
-
-  if(estufas =='muda'){
-    grafico1.data.datasets[0].data = mudasAlertasCuidado
-    grafico1.data.datasets[1].data = mudasAlertasCriticos
-    grafico1.update()
+// Preenche as linhas de limite do gráfico (um valor para cada hora)
+function atualizarLinhas(b, c) {
+  let linhaMin = [];
+  let linhaMax = [];
+  for (let i = 0; i < 24; i++) {
+    linhaMin.push(b);
+    linhaMax.push(c);
   }
-  if(estufas == 'vegetativa'){
-    grafico1.data.datasets[0].data = vegetativaAlertasCuidado
-    grafico1.data.datasets[1].data = vegetativaAlertasCriticos
-    grafico1.update()
-  }
-  if(estufas == 'reprodutiva'){
-    grafico1.data.datasets[0].data = reprodutivaAlertasCuidado
-    grafico1.data.datasets[1].data = reprodutivaAlertasCriticos
-    grafico1.update()
-    
-  }
+  grafico1.data.datasets[1].data = linhaMax;
+  grafico1.data.datasets[2].data = linhaMin;
+  grafico1.update();
 }
+
+function atualizarFaixas(fase) {
+  let a = 0;
+  let b = 0;
+  let c = 0;
+  let d = 0;
+
+  // Limites de PPFD de cada fase
+  if (fase == "muda") {
+    a = 45;
+    b = 69;
+    c = 93;
+    d = 115;
+  } else if (fase == "vegetativa") {
+    a = 115;
+    b = 162;
+    c = 185;
+    d = 230;
+  } else {
+    a = 175;
+    b = 254;
+    c = 347;
+    d = 400;
+  }
+
+  // Textos dos cards de faixa
+  document.getElementById("faixa1").textContent = "< " + a;
+  document.getElementById("faixa2").textContent = "> " + a + " & <" + b;
+  document.getElementById("faixa3").textContent = ">" + b + " & <" + c;
+  document.getElementById("faixa4").textContent = "> " + c + " & <" + d;
+  document.getElementById("faixa5").textContent = "> " + d;
+
+  // Cor da leitura atual
+  let cor = "faixa-alerta";
+  if (leituraAtual < a || leituraAtual > d) {
+    cor = "faixa-critico";
+  } else if (leituraAtual >= b && leituraAtual <= c) {
+    cor = "faixa-adequado";
+  }
+
+  document.getElementById("leituraValor").textContent = leituraTexto;
+  document.getElementById("cardLeitura").className = "leitura-atual " + cor;
+
+  // Linhas de limite no gráfico
+  atualizarLinhas(b, c);
+}
+
+function selecionarFase() {
+  const fase = fasesTomate.value;
+  atualizarFaixas(fase);
+}
+
+// Ao carregar a página, aplica a fase selecionada
+atualizarFaixas(fasesTomate.value);
 
 </script>
