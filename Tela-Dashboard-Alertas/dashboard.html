@@ -25,9 +25,6 @@
             <a class="menu-buttons">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house preview-icon"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
               Home</a>
-            <a class="menu-buttons">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building preview-icon"><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M12 6h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/><path d="M8 6h.01"/><path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
-              Estufas</a>
             <a class="menu-buttons"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock preview-icon"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               Registro</a>
           </div>
@@ -44,7 +41,7 @@
         <div class="dashboard-content">
           <div class="title-estufas">
             <div style="display: flex; flex-direction: column;gap: 10px;">
-              <h1>Registro de Alertas da Estufa</h1>
+              <h1>Registro de Alertas da Estufa de Mudas</h1>
               <p style="font-weight:700; color: rgb(65, 65, 65);">Alertas disparados durante a semana</p>
             </div>
             
@@ -62,9 +59,9 @@
                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf preview-icon "><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
             <select name="estufasTomate" id="estufasTomate" onchange="selecionarestufa()">
               <option value="" disabled selected>Selecione uma estufa</option>
-              <option value="muda">Mudas</option>
-              <option value="vegetativa">Vegetativa</option>
-              <option value="reprodutiva">reprodutiva</option>
+              <option value="muda">Estufa 01</option>
+              <option value="vegetativa">Estufa 02</option>
+              <option value="reprodutiva">Estufa 03</option>
             </select>
             </div>
           </div>
@@ -78,7 +75,7 @@
             <div class="kpis leitura">
               <div class="stats">
                 <p class="kpi-title">TOTAL DE ALERTAS SEMANA</p>
-                <p class="kpi-dado">30</p>
+                <p class="kpi-dado">27</p>
                 <p class="kpi-title">ALERTAS</p>
               </div>
             </div>
@@ -94,7 +91,7 @@
             <div class="kpis leitura critico">
               <div class="stats">
                 <p class="kpi-title">ALERTAS EM ESTADO DE CRÍTICO</p>
-                <p class="kpi-dado">16</p>
+                <p class="kpi-dado">13</p>
                 <p class="kpi-title">ALERTAS</p>
               </div>
             </div>
@@ -120,13 +117,13 @@
 const ctx = document.getElementById('myChart');
 // Quantidade de alertas de cuidado
 const vegetativaAlertasCuidado = [2, 4, 3, 2, 1, 2]
-const mudasAlertasCuidado = [4, 2, 3, 2, 1, 2];
-const reprodutivaAlertasCuidado = [4, 2, 3, 2, 1, 2];
+const mudasAlertasCuidado = [2, 4, 1, 2, 1, 2];
+const reprodutivaAlertasCuidado = [2, 4, 1, 2, 3, 2];
 
 // Quantidade de alertas criticos
 const vegetativaAlertasCriticos = [3, 5, 2, 1, 1, 3];
-const mudasAlertasCriticos = [3, 5, 2, 1, 3, 1];
-const reprodutivaAlertasCriticos = [2, 1, 1, 5, 4, 3];
+const mudasAlertasCriticos = [2, 1, 1, 1, 2, 1];
+const reprodutivaAlertasCriticos = [2, 1, 1, 3, 2, 4];
 
 let grafico1 = new Chart(ctx, {
       type: 'bar',
@@ -142,7 +139,7 @@ let grafico1 = new Chart(ctx, {
           },
           {
             label: 'Alertas acima do normal',
-            data: [3, 5, 2, 1, 3, 1],
+            data: [3, 7, 2, 1, 3, 1],
             backgroundColor: 'rgba(200, 74, 62 )',
             borderColor: 'rgba(200, 74, 62 )',
             borderWidth: 1

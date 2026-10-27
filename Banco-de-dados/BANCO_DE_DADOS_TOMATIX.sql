@@ -7,9 +7,19 @@ cnpj CHAR(14) NOT NULL,
 dtCadastro DATETIME DEFAULT current_timestamp NOT NULL,
 token CHAR(5) NOT NULL,
 tipo VARCHAR(45) NOT NULL,
-CONSTRAINT ch_tipo_empresa CHECK (tipo IN ('filial','matriz')),
-cidade VARCHAR(45),
-estado VARCHAR(45)
+CONSTRAINT ch_tipo_empresa CHECK (tipo IN ('filial','matriz'))
+);
+
+CREATE TABLE ENDERECO(
+id INT PRIMARY KEY AUTO_INCREMENT,
+logradouro VARCHAR(45) NOT NULL,
+numero INT NOT NULL,
+bairro VARCHAR(45) NOT NULL,
+cep CHAR(8) NOT NULL,
+cidade VARCHAR(45) NOT NULL,
+uf CHAR(2) NOT NULL,
+fk_empresa INT NOT NULL,
+FOREIGN KEY (fk_empresa) REFERENCES EMPRESA (id)
 );
 
 CREATE TABLE USUARIO(
@@ -19,7 +29,7 @@ email VARCHAR(50) NOT NULL,
 senha VARCHAR(45) NOT NULL,
 dtCadastro DATETIME DEFAULT current_timestamp NOT NULL,
 fk_empresa INT NOT NULL,
-CONSTRAINT fk_usuario_empresa FOREIGN KEY (fk_empresa) REFERENCES EMPRESA (id)
+FOREIGN KEY (fk_empresa) REFERENCES EMPRESA (id)
 );
 
 CREATE TABLE ESTUFA(
@@ -28,17 +38,17 @@ tipo_fase VARCHAR(45) NOT NULL,
 CONSTRAINT ch_fase CHECK (tipo_fase IN('mudas','vegetativa','reprodutiva')),
 identificador CHAR(5) NOT NULL,
 fk_empresa INT NOT NULL,
-CONSTRAINT fk_estufa_empresa FOREIGN KEY (fk_empresa) REFERENCES EMPRESA (id)
+FOREIGN KEY (fk_empresa) REFERENCES EMPRESA (id)
 );
 
 CREATE TABLE SENSOR(
 id INT PRIMARY KEY AUTO_INCREMENT,
 dtInstalacao DATETIME DEFAULT current_timestamp NOT NULL,
-nSerie CHAR(6) NOT NULL,
-status_sensor VARCHAR(45) NOT NULL,
-CONSTRAINT ch_status CHECK (status_sensor IN('ativo','inativo','manutencao')),
+numeroSerie CHAR(6) NOT NULL,
+status VARCHAR(45) NOT NULL,
+CONSTRAINT ch_status CHECK (status IN('ativo','inativo','manutencao')),
 fk_estufa INT NOT NULL,
-CONSTRAINT fk_estufa_sensor FOREIGN KEY (fk_estufa) REFERENCES ESTUFA (id)
+FOREIGN KEY (fk_estufa) REFERENCES ESTUFA (id)
 );
 
 CREATE TABLE LEITURA_LUMINOSIDADE(
@@ -46,7 +56,15 @@ id INT PRIMARY KEY auto_increment,
 dtHora  DATETIME DEFAULT current_timestamp NOT NULL,
 ppfd DECIMAL(10,2) NOT NULL,
 fk_sensor INT NOT NULL,
-CONSTRAINT fk_sensor_leitura FOREIGN KEY (fk_sensor) REFERENCES SENSOR (id)
+FOREIGN KEY (fk_sensor) REFERENCES SENSOR (id)
+);
+
+CREATE TABLE RESGISTRO(
+id INT PRIMARY KEY AUTO_INCREMENT,
+registro VARCHAR(45) NOT NULL,
+CONSTRAINT ch_registro CHECK (registro IN ('critico','cuidado')),
+fk_leitura INT NOT NULL,
+FOREIGN KEY (fk_leitura) REFERENCES LEITURA_LUMINOSIDADE (id)
 );
 
 INSERT INTO EMPRESA (razaoSocial, cnpj,token,tipo,cidade,estado) VALUES
