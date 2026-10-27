@@ -120,14 +120,6 @@ html {
     
 }
 
-.menu-lateral{
-    background-color: #006b35;
-    padding: 20px;
-    height: 720px;
-    width: 200px;
-    border-radius: 10px;
-    flex-direction: row;
-}
 .leitura{
     margin-bottom: 20px;
     display: flex;
@@ -306,8 +298,8 @@ html {
 /* Menu Lateral */
 .menu-lateral{
     background-color: #006b35;
-    width: 17%;
-    
+    width: 20%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
