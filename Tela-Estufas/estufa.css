@@ -117,7 +117,7 @@ html {
 .dashboard {
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     background-color: #fcfcfc;
 }
 
@@ -156,12 +156,11 @@ color: #6F7D73;
     
 }
 
-
 /* Menu Lateral */
 .menu-lateral{
     background-color: #006b35;
     width: 20%;
-    height: 100vh;
+    min-height: 100vh; /* garante que a navbar vai cobrir a tela toda*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;

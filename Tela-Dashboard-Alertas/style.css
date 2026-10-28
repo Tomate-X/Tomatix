@@ -19,6 +19,13 @@ html {
     color: #17241B;
 }
 
+html, body { /*css global da página*/
+margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
 .idEstufa{
     padding: 5px 20px;
     background-color: #00ab56;
@@ -133,11 +140,13 @@ html {
 .menu-lateral{
     background-color: #006b35;
     width: 20%;
-    height: 100vh;
+    height: 220vh;
     display: flex;
-    height: 100vh;
+    align-self: stretch;
     flex-direction: column;
     justify-content: space-between;
+    height: auto; 
+    align-self: stretch; /*faz a navbar ser obrigada a se esticar até o gráfico*/
     
 }
 .logo-div{

@@ -31,7 +31,7 @@ body {
 .menu-lateral {
     background-color: #006b35;
     width: 20%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
