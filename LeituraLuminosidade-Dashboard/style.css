@@ -53,12 +53,18 @@ body {
     border-radius: 10px;
     padding: 10px 14px;
     margin-bottom: 36px;
+    flex-direction: row;
+    width: 200px;
 }
 
 .fases-container {
     display: flex;
     align-items: center;
     gap: 8px;
+    border: solid 1px gray;
+    padding: 10px;
+    border-radius: 5px;
+    height: 50px;
 }
 
 .lucide-leaf {
@@ -84,8 +90,8 @@ body {
 
 .btns-container {
     display: flex;
-    flex-wrap: wrap;
     gap: 8px;
+    flex-direction: column;
     padding: 0 4px;
 }
 
@@ -93,6 +99,8 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
+    height: 25px;
+    
     padding: 6px 10px;
     color: #ffffff;
     font-size: 10px;
@@ -143,7 +151,7 @@ body {
     font-size: 9px;
     font-weight: 800;
     text-transform: uppercase;
-    color: inherit;
+    color: white;
 }
 
 .leitura-valor {
@@ -151,12 +159,13 @@ body {
     font-weight: 700;
     line-height: 1.1;
     padding-top: 6px;
+    color: white;
 }
 
 /* ===== Faixas de PPFD ===== */
 .faixas {
     display: flex;
-    gap: 12px;
+    gap: 0px;
     margin-bottom: 24px;
 }
 
@@ -164,7 +173,7 @@ body {
     flex: 1;
     min-height: 100px;
     padding: 14px;
-    border-radius: 8px;
+    border-radius: 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -174,12 +183,14 @@ body {
     font-size: 9px;
     font-weight: 800;
     text-transform: uppercase;
+    color: white;
 }
 
 .faixa-valor {
     font-size: 24px;
     font-weight: 700;
     white-space: nowrap;
+    color: white;
 }
 
 /* ===== Cores (valem para a leitura atual e para as faixas) ===== */
@@ -202,4 +213,11 @@ body {
 .res {
     position: relative;
     height: 400px;
+}
+
+.metricas{
+    border: solid 1px gray;
+    border-radius: 5px;
+    padding: 10px;
+
 }
