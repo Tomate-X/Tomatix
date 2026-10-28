@@ -15,6 +15,9 @@ a{
     --verde-adequado: #2e7d32;
     --amarelo-alerta: #f9a825;
     --vermelho-critico: #d11313;
+    --cor-mudas: #10b981;
+    --cor-vegetativa: #f59e0b;
+    --cor-frutificacao: #ef4444;
 }
 
 html {
@@ -133,14 +136,24 @@ html {
 }
 
 .title-estufas h1 {
-font-size: 20px;
+font-size: 40px;
 font-weight: 700;
+}
+
+.title-estufas h4 {
+font-size: 18px;
+font-weight: 50;
+margin-bottom: 20px;
+color: #6F7D73;
 }
 
 .inputs-container {
     height: 40px;
     display: flex;
+    justify-content: flex-start;
+    padding: 5px;
     gap: 20px;
+    
 }
 
 
@@ -148,7 +161,7 @@ font-weight: 700;
 .menu-lateral{
     background-color: #006b35;
     width: 20%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -245,6 +258,7 @@ font-weight: 700;
 .lucide-calendar{
     width: 20px;
 }
+
 #select-data{
     padding: 10px 10px;
     border: none;
@@ -267,34 +281,36 @@ font-weight: 700;
     padding: 10px 24px;
     border-radius: 999px;
     color: #ffffff;
-    font-size: 11px;
+    font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
 }
 
-.marcador--adequado {
-    background-color: var(--verde-adequado);
+.marcador--mudas { 
+    background-color: var(--cor-mudas);
+ }
+
+.marcador--vegetativa { 
+    background-color: var(--cor-vegetativa); 
 }
 
-.marcador--critico {
-    background-color: var(--vermelho-critico);
-}
+.marcador--frutificacao { 
+    background-color: var(--cor-frutificacao); 
 
-.marcador--alerta {
-    background-color: var(--amarelo-alerta);
 }
-
 /* Campo de Selecionar Estufas*/
 .estufas {
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
    
 }
 
 .linha1{
     display: flex;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 24px;
+    width: 100%;
 }
 
 .linha1 .card-estufa{
@@ -304,38 +320,135 @@ font-weight: 700;
 .linha2{
     display: flex;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.card-espaco-vazio {
+    flex: 1;
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 20px;
+    border: none;
 }
 
 .linha2 .card-estufa{
     flex: 1
 }
 
-.card-estufa{
+.card-estufa {
     border: solid #17241B 1px;
     border-radius: 15px;
     padding: 20px;
-    background-color: #2e7d32;
-    color: #ffffff;
+    display: flex;
+    justify-content: space-between; /* empurra o texto pra esquerda e o card pra direita */
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    color: black;
 }
 
 .card-estufa a { /* pinta os links azuis para branco*/
     text-decoration: none;
-    color: #ffffff;
-}
-
-.card-estufa3{
-    border: solid #17241B 1px;
-    border-radius: 15px;
+    color: black;display: flex; /* Transforma o link em flex para que o filho respeite as propriedades */
+    width: 100%;
     padding: 20px;
-    width: 299.41px; /* é o tamanho exato dos cards 1 e 2 na tela*/
-    background-color: #f9a825;
-    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card-estufa3 a { /* pinta os links azuis para branco*/
-    text-decoration: none;
-    color: #ffffff;
+.card-estufa h4{
+    font-size: 40px;
+}
+
+/* Conteúdos do Cartão (Lado Esquerdo) */
+.card-info-esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/*Nome das estufas dentro do cartão*/
+.card-titulo-container { 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+/*Texto interno do cartão*/
+.card-titulo-container h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #17241B;
+}
+
+/* Alinhamento dos números das métricas */
+.card-metrica {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 6px;
+}
+
+/*Mexe apenas no valor de leitura do card*/
+.ppfd-valor {
+    font-size: 43px;
+    font-weight: 700;
+}
+
+/*Mexe apenas no "PPFD" do card*/
+.ppfd-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #a0aec0;
+}
+
+
+/* Os Selos de Status (Lado Direito) */
+.card {
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Classes Modificadoras: (aplicam a cor correspondente para cada fase do tomate)*/
+.card--mudas { 
+    background-color: var(--cor-mudas);
+    color: white;
+    font-size: 20px;
+ }
+
+.card--vegetativa { 
+    background-color: var(--cor-vegetativa); 
+    color: white;
+    font-size: 20px; 
+}
+
+.card--frutificacao { 
+    background-color: var(--cor-frutificacao);
+     color: white;
+     font-size: 20px; 
+}
+
+.valor--mudas { 
+    color: var(--cor-mudas); 
+}
+
+.valor--vegetativa { 
+    color: var(--cor-vegetativa); 
+}
+
+.valor--frutificacao { 
+    color: var(--cor-frutificacao); 
+}
+
+.barra-verde {
+    background-color: #005223;
+    padding: 2px;
+    border-radius: 60px;
+    width: 14px; /* altera o tamanho da barra verde */
 }
 
 

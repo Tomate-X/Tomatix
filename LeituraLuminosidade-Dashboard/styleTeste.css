@@ -1,0 +1,596 @@
+* {
+    margin: 0;
+    padding: 0; /* Zera o padding e margin padrão dos elementos */
+    box-sizing: border-box; 
+    /* Mantém o width/height do elemento quando é adicionado padding ou border */
+    scroll-behavior: smooth; /* Deixa o scrool suave */
+}
+a{
+    text-decoration: none;
+}
+
+:root {
+    --cor01-: #005223;
+    --cor02-: #d11313;
+    --verde-adequado: #2e7d32;
+    --amarelo-alerta: #f9a825;
+    --vermelho-critico: #d11313;
+    --cor-mudas: #10b981;
+    --cor-vegetativa: #f59e0b;
+    --cor-frutificacao: #ef4444;
+}
+
+html {
+    font-family: "Space Grotesk", sans-serif;
+    color: #17241B;
+}
+
+/* Navbar */
+.logo-nav {
+    width: 40%;
+}
+
+.navbar {
+    background-color: #005223;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 30px;
+    width: 100%;
+}
+
+.nav-items {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 15px;
+}
+
+/* Pintar os links da nav de preto */
+.nav-items a {
+    color: #000000;         
+    text-decoration: none;
+}
+
+.btns-nav {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+    margin-left: auto;
+    border-radius: 20px;
+}
+
+
+/* Botão de Login/Criar conta */
+.btns-login {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.btns-login button {
+    width: 100%;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Botões globais */
+.btn {
+    padding: 10px 20px;
+    background-color: #01662d;
+    color: #ffffff;
+    border: 1px solid var(--cor01-);
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 18px;
+    transition: ease 0.2s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: white;
+    color: var(--cor01-);
+    border: 0.5px solid #ffffff77;
+}
+
+.btn-branco {
+    padding: 10px 20px;
+    background-color: #00ab56;
+    color: #ffffff;
+    border: 1px solid var(--cor01-);
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 18px;
+    transition: ease 0.2s;
+    cursor: pointer;
+}
+
+.btn-branco:hover {
+    color: aliceblue;
+    background-color: var(--cor01-);
+    border: 0.5px solid #ffffff77;
+}
+
+/*Dashboard (alinha o menu lateral e o conteúdo ao lado dele)*/
+.dashboard {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fcfcfc;
+}
+
+.dashboard-content {
+    flex: 1; /* preenche o espaço na tela*/
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.title-estufas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title-estufas h1 {
+font-size: 40px;
+font-weight: 700;
+}
+
+.title-estufas h4 {
+font-size: 18px;
+font-weight: 50;
+margin-bottom: 20px;
+color: #6F7D73;
+}
+
+.inputs-container {
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+    gap: 20px;
+    
+}
+
+
+/* Menu Lateral */
+.menu-lateral{
+    background-color: #006b35;
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.logo-div{
+    display: flex;
+    justify-content: center;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    padding: 40px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.lucide{
+    color: white;
+    width: 25px;
+    height: 25px;
+}
+
+.btns-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    gap: 5px;
+}
+.menu-buttons {
+    padding: 10px 10px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: ease 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.menu-buttons:hover{
+    background-color: #00ab56;
+    transition: 0.3s;
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.user div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    height: 100%;
+    width: fit-content; /* Essa propriedade faz com que o elemento ocupe somente o tamanho do seu conteúdo */
+    padding: 30px;
+    background-color: #2fa964;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+}
+
+.user span{  
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+.user p{
+    margin-top: 10px;
+    color: rgba(218, 218, 218, 0.911)
+}
+
+/* Selects */
+.lucide-leaf{
+    color: green;
+    background-color: #00ab563b;
+    padding: 5px;
+    border-radius: 5px;
+}
+#estufasTomate{
+    padding: 10px 10px;
+    border: none;
+    font-weight: 800;
+    font-size: 12px;
+    color: #2d4534;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+.lucide-calendar{
+    width: 20px;
+}
+
+#select-data{
+    padding: 10px 10px;
+    border: none;
+    font-size: 12px;
+    font-weight: 800;
+    color: #2d4534;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+/* Marcadores*/
+.marcadores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.marcador {
+    padding: 10px 24px;
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.marcador--mudas { 
+    background-color: var(--cor-mudas);
+ }
+
+.marcador--vegetativa { 
+    background-color: var(--cor-vegetativa); 
+}
+
+.marcador--frutificacao { 
+    background-color: var(--cor-frutificacao); 
+
+}
+/* Campo de Selecionar Estufas*/
+.estufas {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+   
+}
+
+.linha1{
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.linha1 .card-estufa{
+    flex: 1
+}
+
+.linha2{
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.card-espaco-vazio {
+    flex: 1;
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 20px;
+    border: none;
+}
+
+.linha2 .card-estufa{
+    flex: 1
+}
+
+.card-estufa {
+    border: solid #17241B 1px;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* empurra o texto pra esquerda e o card pra direita */
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    color: black;
+}
+
+.card-estufa a { /* pinta os links azuis para branco*/
+    text-decoration: none;
+    color: black;display: flex; /* Transforma o link em flex para que o filho respeite as propriedades */
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-estufa h4{
+    font-size: 40px;
+}
+
+/* Conteúdos do Cartão (Lado Esquerdo) */
+.card-info-esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/*Nome das estufas dentro do cartão*/
+.card-titulo-container { 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+/*Texto interno do cartão*/
+.card-titulo-container h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #17241B;
+}
+
+/* Alinhamento dos números das métricas */
+.card-metrica {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 6px;
+}
+
+/*Mexe apenas no valor de leitura do card*/
+.ppfd-valor {
+    font-size: 43px;
+    font-weight: 700;
+}
+
+/*Mexe apenas no "PPFD" do card*/
+.ppfd-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #a0aec0;
+}
+
+
+/* Os Selos de Status (Lado Direito) */
+.card {
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Classes Modificadoras: (aplicam a cor correspondente para cada fase do tomate)*/
+.card--mudas { 
+    background-color: var(--cor-mudas);
+    color: white;
+    font-size: 20px;
+ }
+
+.card--vegetativa { 
+    background-color: var(--cor-vegetativa); 
+    color: white;
+    font-size: 20px; 
+}
+
+.card--frutificacao { 
+    background-color: var(--cor-frutificacao);
+     color: white;
+     font-size: 20px; 
+}
+
+.valor--mudas { 
+    color: var(--cor-mudas); 
+}
+
+.valor--vegetativa { 
+    color: var(--cor-vegetativa); 
+}
+
+.valor--frutificacao { 
+    color: var(--cor-frutificacao); 
+}
+
+.barra-verde {
+    background-color: #005223;
+    padding: 2px;
+    border-radius: 60px;
+    width: 14px; /* altera o tamanho da barra verde */
+}
+
+.lucide-leaf {
+    color: #00ab56;
+    background-color: #00ab563b;
+    padding: 4px;
+    border-radius: 5px;
+    width: 22px;
+    height: 22px;
+}
+
+#fasesTomate {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    color: #17241B;
+    cursor: pointer;
+}
+
+.btns-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 4px;
+}
+
+.menu-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-buttons:hover {
+    background-color: #00ab56;
+}
+
+.menu-buttons.ativo {
+    background-color: #00ab56;
+    border-radius: 20px;
+}
+
+.lucide {
+    color: #ffffff;
+    width: 12px;
+    height: 12px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+/* ===== Conteúdo principal ===== */
+.dashboard-content {
+    flex: 1;
+    padding: 55px 30px 30px 30px;
+}
+
+/* ===== Leitura atual ===== */
+.leitura-atual {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+}
+
+.kpi-title {
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: inherit;
+}
+
+.leitura-valor {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.1;
+    padding-top: 6px;
+}
+
+/* ===== Faixas de PPFD ===== */
+.faixas {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.faixa {
+    flex: 1;
+    min-height: 100px;
+    padding: 14px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.faixa-nome {
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.faixa-valor {
+    font-size: 24px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ===== Cores (valem para a leitura atual e para as faixas) ===== */
+.faixa-critico {
+    background-color: rgba(200, 74, 62, 1);
+    color: #ffffff;
+}
+
+.faixa-alerta {
+    background-color: rgba(226, 181, 44, 1);
+    color: #5c4400;
+}
+
+.faixa-adequado {
+    background-color: rgba(0, 157, 68, 1);
+    color: #003d1f;
+}
+
+/* ===== Gráfico ===== */
+.res {
+    position: relative;
+    height: 400px;
+}
+

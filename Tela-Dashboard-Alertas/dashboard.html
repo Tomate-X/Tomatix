@@ -13,7 +13,7 @@
 
 <div class="main">
                           <!--Gráfico-->
-    <section class="dashboard">
+    <div class="dashboard">
       <div class="menu-lateral">
         
         <div>
@@ -107,7 +107,7 @@
         </div>
       
         
-    </section>
+    </div>
 </div>
 
 </body>
@@ -132,14 +132,14 @@ let grafico1 = new Chart(ctx, {
         datasets: [
           {
             label: 'Alertas abaixo do normal',
-            data: [2, 4, 1, 2, 1, 2,1],
+            data: [2, 4, 1, 2, 1, 2],
             backgroundColor: 'rgba(226, 181, 44 )',
             borderColor: 'rgba(226, 181, 44 )',
             borderWidth: 1
           },
           {
             label: 'Alertas acima do normal',
-            data: [2, 1, 1, 1, 2, 1,1],
+            data: [2, 1, 1, 1, 2, 1],
             backgroundColor: 'rgba(200, 74, 62 )',
             borderColor: 'rgba(200, 74, 62 )',
             borderWidth: 1

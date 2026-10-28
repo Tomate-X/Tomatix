@@ -22,15 +22,16 @@ body {
 /* ===== Layout geral ===== */
 .dashboard {
     display: flex;
+    width: 100%;
     min-height: 100vh;
+    background-color: #fcfcfc;
 }
 
 /* ===== Menu lateral ===== */
 .menu-lateral {
-    background-color: #005223;
+    background-color: #006b35;
     width: 20%;
-    min-height: 100vh;
-    padding: 20px 12px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

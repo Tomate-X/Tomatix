@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- Container Pai da Dashboard -->
-    <section class="dashboard">
+    <section class="dashboard" style="background-color: #F4F6F2;">
       
       <!-- 1. Menu Lateral -->
       <div class="menu-lateral">
@@ -18,15 +18,15 @@
           </div>
           
           <div class="btns-container">
-            <a class="menu-buttons">
+            <a href="../Tela-Estufas/estufa.html" class="menu-buttons">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house preview-icon"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
               Home
             </a>
-            <a class="menu-buttons">
+            <a href="../LeituraLuminosidade-Dashboard/dashboard.html" class="menu-buttons">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building preview-icon"><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M12 6h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/><path d="M8 6h.01"/><path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
               Estufas
             </a>
-            <a class="menu-buttons"> 
+            <a href="../Tela-Dashboard-Alertas/dashboard.html" class="menu-buttons"> 
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock preview-icon"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               Registro
             </a>
@@ -44,49 +44,87 @@
         
         <!-- Topo da página com Título e Inputs -->
         <div class="title-estufas">
-            <h1 class="cumprimento">Ola Fernando Brandão!</h1>
-            <h1>Registro de Alertas</h1>
+            <h1>Visão Geral das Estufas</h1>
             <h4 class="dashboard-descricao">Acompanhe a condição luminosa das estufas vinculadas a esta unidade.</h4>
             <div class="inputs-container">
 
               <div class="marcadores" aria-label="Legenda de status">
-                <div class="marcador marcador--adequado">Adequado</div>
-                <div class="marcador marcador--critico">Estado Crítico</div>
-                <div class="marcador marcador--alerta">Em Alerta</div>
+                <div class="marcador marcador--mudas">ADEQUADO</div> <!--marcador verde-->
+                <div class="marcador marcador--vegetativa">EM ALERTA</div> <!--marcador amarelo-->
+                <div class="marcador marcador--frutificacao">ESTADO CRÍTICO</div> <!--marcador vermelho-->
             </div>
             </div>
         </div> 
-      
-        <!-- Seção dos Cards das Estufas -->
 
-        <div class="estufas">
-              <a href="../LeituraLuminosidade-Dashboard/dashboard.html">
-            <div class="linha1">
-                <div class="card-estufa">
-                    <h4>Estufa 01</h4>
-                    <p>ppfd</p>
-                  </a>
+       <!-- Seção dos Cards das Estufas -->
+<div class="estufas">
+    
+    <!-- Linha 1: Dois cartões lado a lado -->
+    <div class="linha1">
+        
+        <!-- Card Estufa 01 -->
+         <div class="barra-verde"></div>
+        <div class="card-estufa">
+            <a href="../LeituraLuminosidade-Dashboard/dashboard.html">
+                <div class="card-info-esquerda">
+                    <div class="card-titulo-container">
+                        <img src="../Site-Institucional/assets/ICONE-PLANTA.png" alt="icone-planta">
+                        <h4>Estufa 01</h4>
+                    </div>
+                    <div class="card-metrica">
+                        <span class="ppfd-valor valor--mudas">73.5</span>
+                        <span class="ppfd-label">PPFD</span>
+                    </div>
                 </div>
-
-                <div class="card-estufa">
-                  <a href="../LeituraLuminosidade-Dashboard/dashboard.html">
-                    <h4>Estufa 02</h4>
-                    <p>ppfd</p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="linha2">
-              <a href="../LeituraLuminosidade-Dashboard/dashboard.html">
-            <div class="card-estufa3">
-                <h4>Estufa 03</h4>
-                <p>ppfd</p>
-                </a>
-            </div>
-            
+                <span class="card card--mudas">Mudas</span>
+            </a>
         </div>
-      </div>
-    </div> 
+
+        <!-- Card Estufa 02 -->
+     
+        <div class="card-estufa">
+            <a href="../LeituraLuminosidade-Dashboard/dashboard.html">
+                <div class="card-info-esquerda">
+                    <div class="card-titulo-container">
+                        <img src="../Site-Institucional/assets/ICONE-PLANTA.png" alt="icone-planta">
+                        <h4>Estufa 02</h4>
+                    </div>
+                    <div class="card-metrica">
+                        <span class="ppfd-valor valor--mudas">73.5</span>
+                        <span class="ppfd-label">PPFD</span>
+                    </div>
+                </div>
+                <span class="card card--mudas">Frutificação</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Linha 2 pro terceiro cartão-->
+    <div class="linha2">
+        
+        <!-- Card Estufa 03 -->
+         <div class="barra-verde"></div>
+        <div class="card-estufa">
+            <a href="../LeituraLuminosidade-Dashboard/dashboard.html">
+                <div class="card-info-esquerda">
+                    <div class="card-titulo-container">
+                        <img src="../Site-Institucional/assets/ICONE-PLANTA.png" alt="icone-planta">
+                        <h4>Estufa 03</h4>
+                    </div>
+                    <div class="card-metrica">
+                        <span class="ppfd-valor valor--vegetativa">73.5</span>
+                        <span class="ppfd-label">PPFD</span>
+                    </div>
+                </div>
+                <span class="card card--vegetativa">Vegetativa</span>
+            </a>
+        </div>
+        
+        <!-- Espaço em branco para alinhar o card 3 com os outros -->
+        <div class="card-espaco-vazio"></div>
+    </div>
+
+</div>
 
 </body>
 </html>

@@ -108,6 +108,9 @@ html {
  /* Dashboard */
 .dashboard{
     display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fcfcfc;
 }
 .dashboard-content{
     padding: 40px;
@@ -120,9 +123,11 @@ html {
 .menu-lateral{
     background-color: #006b35;
     width: 20%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 .logo-div{
     display: flex;
