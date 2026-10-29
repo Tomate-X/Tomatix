@@ -453,3 +453,52 @@ color: #6F7D73;
 
 
 
+.nav-items {
+    font-size: 14px;
+}
+
+.btn, .btn-branco {
+    font-size: 11px;
+}
+
+.title-estufas h1 {
+    font-size: 34px;
+}
+
+.title-estufas h4 {
+    font-size: 16px;
+}
+
+.user div {
+    font-size: 18px;
+}
+
+.user span {
+    font-size: 16px;
+}
+
+.marcador {
+    font-size: 16px;
+}
+
+.card-estufa h4 {
+    font-size: 34px;
+}
+
+.card-titulo-container h4 {
+    font-size: 21px;
+}
+
+.ppfd-valor {
+    font-size: 36px;
+}
+
+.ppfd-label {
+    font-size: 16px;
+}
+
+.card--mudas,.card--vegetativa,.card--frutificacao {
+    font-size: 17px;
+}
+
+
