@@ -141,3 +141,55 @@ INSERT INTO REGISTRO (registro, fk_leitura, fk_estufa) VALUES
 -- DOMINGO 
 ('cuidado', 21, 1), 
 ('critico', 22, 1); 
+
+
+-- SELECT USUARIO, EMPRESA E ENDERECO
+select U.id as 'ID',
+U.nome as 'NOME',
+U.email as 'EMAIL',
+U.senha as 'SENHA',
+E.razaoSocial 'RAZÃO SOCIAL',
+E.cnpj as 'CNPJ',
+E.tipo as 'TIPO DE EMPRESA',
+EN.logradouro as 'LOGRADOURO',
+EN.numero as 'NUMERO',
+EN.bairro as 'BAIRRO',
+EN.uf as 'UNIDADE FEDERRATIVA',
+EN.CIDADE as 'CIDADE',
+EN.cep as 'CEP'
+FROM USUARIO AS U
+ JOIN EMPRESA AS E
+ON U.fk_empresa = E.id
+JOIN ENDERECO AS EN 
+ON EN.fk_empresa = E.id;
+
+-- SELECT LEITURA LUMINOSIDADE E REGISTRO
+SELECT 
+L.ppfd as 'PPFD',
+R.registro as 'REGISTRO DE ALERTAS'
+FROM LEITURA_LUMINOSIDADE AS L
+JOIN REGISTRO AS R
+ON R.fk_leitura = L.id;
+
+-- SELECT LEITURA_LUMINOSIDADE, REGISTRO E ESTUFA
+SELECT 
+L.ppfd as 'PPFD',
+R.registro as 'REGISTRO DE ALERTAS',
+E.tipoFase as 'FASE DO TOMATE',
+E.identificador as 'IDENTIFICAÇÃO DA ESTUFA'
+FROM LEITURA_LUMINOSIDADE AS L
+JOIN REGISTRO AS R
+ON R.fk_leitura = L.id
+ JOIN ESTUFA AS E
+ ON R.fk_estufa = E.id;
+ 
+ -- SELECT ESTUFA COM SENSOR
+ SELECT 
+ E.tipoFase as 'FASE DO TOMATE',
+ E.identificador as 'IDENTIFICADOR DA ESTUFA',
+ S.dtInstalacao as 'DATA DE INSTALAÇÃO',
+ S.numeroSerie as 'NUMERO DE SERIE',
+ S.statusSensor as 'STATUS DO SENSOR'
+ FROM ESTUFA AS E
+ JOIN SENSOR AS S
+ ON S.fk_estufa = E.id;
