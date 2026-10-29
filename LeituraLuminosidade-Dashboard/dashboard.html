@@ -19,7 +19,9 @@
 
         <div>
           <div class="logo-div">
-            <img src="../Site-Institucional/assets/Logo Branca Tomatix.svg" alt="Tomatix" class="logo">
+            <a href="../Site-Institucional/site.html">
+              <img src="../Site-Institucional/assets/Logo Branca Tomatix.svg" alt="Tomatix" class="logo">
+            </a>
           </div>
 
           <div class="btns-container">
@@ -41,15 +43,16 @@
       <!-- Conteúdo principal -->
       <div class="dashboard-content">
         <div class="divH1">
-          <h1>Monitoramento de Luminosidade</h1>
+          <h1>Monitoramento de Luminosidade na Estufa de Mudas</h1>
         </div>
         <div class="seletor-estufa">
             <div class="fases-container">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
               <select name="fasesTomate" id="fasesTomate" onchange="selecionarFase()">
-                <option value="muda">Estufa de Mudas</option>
-                <option value="vegetativa">Estufa Vegetativa</option>
-                <option value="reprodutiva">Estufa Reprodutiva</option>
+                <option value="muda" disabled selected>Selecione uma estufa</option>
+                <option value="muda">Estufa Mudas - #m01es</option>
+                <option value="vegetativa">Estufa Vegetativa - #v01es</option>
+                <option value="reprodutiva">Estufa Reprodutiva - #r01es</option>
               </select>
             </div>
           </div>

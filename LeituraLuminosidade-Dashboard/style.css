@@ -60,7 +60,7 @@ width: 20%;
 
 .fases-container {
     display: flex;
-    width: 200px;
+    width: 250px;
     align-items: center;
     gap: 8px;
     border: solid 1px gray;
