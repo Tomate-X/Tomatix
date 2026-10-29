@@ -65,7 +65,7 @@
                 
                 <!--Botão Criar conta-->
                 <div class="btns-login">
-                    <button onclick="enviar()"id="btn-enviar" class="btn">Criar conta</button>
+                    <a href="#" id="linkLogin" style="flex: 1; text-decoration: none;"><button onclick="enviar()"id="btn-enviar" class="btn">Criar conta</button></a>
                 </div>
             </div> 
         </div>
@@ -220,7 +220,10 @@
                 console.log("Senha:", textoCensurado);
                 console.log("Confirmar Senha:", checkCensurado);
                 
-                alert("Cadastro realizado com sucesso! (Passou no console? deu certo!!!)");
+                alert("Cadastro realizado com sucesso!");
+
+                // mesma lógica do div.innerHTML, só que pra trocar o # do <a> pelo link certo
+                linkLogin.href = "../Tela-Login/login.html";
             }
         }
     </script>
