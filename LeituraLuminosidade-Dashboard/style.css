@@ -52,7 +52,7 @@ width: 20%;
 .seletor-estufa {
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 10px px;
+    padding: 10px 5px 10px 10px;
     margin-bottom: 36px;
     flex-direction: row;
     width: 200px;
@@ -63,7 +63,7 @@ width: 20%;
     align-items: center;
     gap: 8px;
     border: solid 1px gray;
-    padding: 10px;
+    padding: 10px 10px 10px 10px;
     border-radius: 5px;
     height: 50px;
 }
@@ -248,4 +248,7 @@ width: 20%;
     border-radius: 5px;
     padding: 10px;
 
+}
+.divH1{
+    padding: 0px 40px 30px 10px;
 }

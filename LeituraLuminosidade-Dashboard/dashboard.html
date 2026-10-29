@@ -37,9 +37,12 @@
           <p>Olá,<br> <span>Fernando Brandão</span></p>
         </div>
       </div>
-
+       
       <!-- Conteúdo principal -->
       <div class="dashboard-content">
+        <div class="divH1">
+          <h1>Monitoramento de Luminosidade</h1>
+        </div>
         <div class="seletor-estufa">
             <div class="fases-container">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
@@ -53,7 +56,7 @@
         <!-- Leitura atual (a cor muda pelo JS) -->
         <div class="leitura-atual faixa-alerta" id="cardLeitura">
           <p class="kpi-title">Leitura atual</p>
-          <p class="leitura-valor" id="leituraValor">70,1</p>
+          <p class="leitura-valor" id="leituraValor">172,8</p>
           <p class="kpi-title">PPFD - (Potencial Fotossintético da Planta)</p>
         </div>  
         
@@ -114,8 +117,8 @@ let div_card = cardLeitura;
 const leiturasDia = [75, 80, 85, 70, 65, 60, 75, 85, 90, 95, 80, 75, 70, 72, 80, 88, 82, 78, 74, 80, 85, 90, 75, 70];
 
 // Leitura atual do sensor (troque pelo valor vindo do Arduino/API)
-const leituraAtual = 70.1;
-const leituraTexto = "70,1";
+const leituraAtual = 70;
+const leituraTexto = "70";
 
 let grafico1 = new Chart(myChart, {
       type: 'line',
@@ -127,21 +130,35 @@ let grafico1 = new Chart(myChart, {
             data: leiturasDia,
             borderColor: 'rgba(0, 128, 0, 1)',
             backgroundColor: 'rgba(0, 128, 0, 1)',
-            borderWidth: 2
+            borderWidth: 4
           },
           {
             label: 'Limite superior',
             data: [],
-            borderColor: 'rgba(0, 0, 255, 1)',
-            backgroundColor: 'rgba(0, 0, 255, 1)',
-            borderWidth: 2
+            borderColor: 'rgba(226, 181, 44, 1)',
+            backgroundColor: 'rgba(226, 181, 44, 1)',
+            borderWidth: 3
           },
           {
             label: 'Limite inferior',
             data: [],
-            borderColor: 'rgba(255, 99, 132, 1)',
-            backgroundColor: 'rgba(255, 99, 132, 1)',
-            borderWidth: 2
+            borderColor: 'rgba(226, 181, 44, 1)',
+            backgroundColor: 'rgba(226, 181, 44, 1)',
+            borderWidth: 3
+          },
+          {
+            label: 'Limite critico1',
+            data: [],
+            borderColor: 'rgba(200, 74, 62, 1)',
+            backgroundColor: 'rgba(200, 74, 62, 1)',
+            borderWidth: 3
+          },
+          {
+            label: 'Limite critico2',
+            data: [],
+            borderColor: 'rgba(200, 74, 62, 1)',
+            backgroundColor: 'rgba(200, 74, 62, 1)',
+            borderWidth: 3
           }
         ]
       },
@@ -161,7 +178,7 @@ let grafico1 = new Chart(myChart, {
             }
           },
           y: {
-            beginAtZero: true,
+            min: 20,
             max: 120
           }
         }
@@ -169,15 +186,27 @@ let grafico1 = new Chart(myChart, {
   });
 
 // Preenche as linhas de limite do gráfico (um valor para cada hora)
-function atualizarLinhas(b, c) {
+// a = crítico abaixo (linha vermelha de baixo)
+// b = alerta abaixo (linha amarela de baixo)
+// c = alerta elevado (linha amarela de cima)
+// d = crítico elevado (linha vermelha de cima)
+function atualizarLinhas(a, b, c, d) {
+  let linhaCriticoBaixo = [];
   let linhaMin = [];
   let linhaMax = [];
+  let linhaCriticoAlto = [];
+
   for (let i = 0; i < 24; i++) {
+    linhaCriticoBaixo.push(a);
     linhaMin.push(b);
     linhaMax.push(c);
+    linhaCriticoAlto.push(d);
   }
+
   grafico1.data.datasets[1].data = linhaMax;
   grafico1.data.datasets[2].data = linhaMin;
+  grafico1.data.datasets[3].data = linhaCriticoBaixo;
+  grafico1.data.datasets[4].data = linhaCriticoAlto;
   grafico1.update();
 }
 
@@ -224,7 +253,7 @@ function atualizarFaixas(fase) {
   div_card.className = "leitura-atual " + cor;
 
   // Linhas de limite no gráfico
-  atualizarLinhas(b, c);
+  atualizarLinhas(a, b, c, d);
 }
 
 function selecionarFase() {
